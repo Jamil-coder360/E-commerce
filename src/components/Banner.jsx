@@ -6,29 +6,61 @@ import banner from '../assets/banner.svg'
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
+import { Link } from 'react-router';
 const Banner = () => {
 
   return (
-<section className='bg-white'>
+<section className='bg-white pt-10 pb-41.25'>
     <div className="container mx-auto">
         <div className='grid grid-cols-[300px_auto]'>
 
         <SideMenu />
+<div className="w-[892px] ">
 
-       <>
-      <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
+         <Swiper
+        pagination={{
+          dynamicBullets: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
         <SwiperSlide>
-            <img src={banner} alt="banner" />
+          <Link to="/shop">
+            <img src={banner} alt="Banner" className='w-full h-auto' /> 
+          </Link>
         </SwiperSlide>
-        <SwiperSlide></SwiperSlide>
-        <SwiperSlide></SwiperSlide>
-        <SwiperSlide></SwiperSlide>
-        <SwiperSlide></SwiperSlide>
-        <SwiperSlide></SwiperSlide>
-        <SwiperSlide></SwiperSlide>
-        <SwiperSlide></SwiperSlide>
+        <SwiperSlide>
+          <Link to="/shop">
+            <img src={banner} alt="Banner" className='w-full h-auto' /> 
+          </Link>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Link to="/shop">
+            <img src={banner} alt="Banner" className='w-full h-auto' /> 
+          </Link>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Link to="/shop">
+            <img src={banner} alt="Banner" className='w-full h-auto' /> 
+          </Link>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Link to="/shop">
+            <img src={banner} alt="Banner" className='w-full h-auto' /> 
+          </Link>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Link to="/shop">
+            <img src={banner} alt="Banner" className='w-full h-auto' /> 
+          </Link>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Link to="/shop">
+            <img src={banner} alt="Banner" className='w-full h-auto' /> 
+          </Link>
+        </SwiperSlide>
       </Swiper>
-    </>
+</div>
         </div>
         </div>
 </section>
