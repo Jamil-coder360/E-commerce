@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
-import WishlistIcon from './Icons.jsx/WishlistIcon'
-import CartIcon from './Icons.jsx/CartIcon'
+import WishlistIcon from './Icons/WishlistIcon'
+import CartIcon from './Icons/CartIcon'
 
 const Navbar = () => {
   const menuItems = [

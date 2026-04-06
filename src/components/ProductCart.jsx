@@ -1,8 +1,8 @@
 // import { StarIcon, EyeIcon, HeartIcon } from "./icons";
 import { Link } from "react-router";
-import WishlistIcon from "./Icons.jsx/WishlistIcon";
-import StarIcon from "./Icons.jsx/StarIcon";
-import EyeIcon from "./Icons.jsx/EyeIcon";
+import WishlistIcon from "./Icons/WishlistIcon";
+import StarIcon from "./Icons/StarIcon";
+import EyeIcon from "./Icons/EyeIcon";
 
 const ProductCard = ({ product }) => {
   return (
@@ -18,7 +18,7 @@ const ProductCard = ({ product }) => {
 
         <div className="space-y-4 absolute top-4 right-4 z-10 flex flex-col gap-1">
           <button>
-            <WishlistIcon />
+            <WishlistIcon/>
           </button>
           <button>
             <EyeIcon />

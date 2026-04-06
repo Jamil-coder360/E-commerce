@@ -1,13 +1,15 @@
 import React from "react";
 
-const EyeIcon = () => {
+const EyeIcon = ({width=34,height=34,fill="none",classname=""}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={34}
-      height={34}
+      width={width}
+      height={height}
+      className={classname}
+      fill={fill}
       viewBox="0 0 34 34"
-      fill="none"
+      // fill="none"
     >
       <circle cx={17} cy={17} r={17} fill="white" />
       <path

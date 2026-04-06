@@ -1,13 +1,14 @@
 import React from "react";
 
-const CartIcon = () => {
+const CartIcon = ({width=32,height=32,fill="none",classname=""}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="32"
-      height="32"
+      width={width}
+      height={height}
+      className={classname}
       viewBox="0 0 32 32"
-      fill="none"
+      fill={fill}
     >
       <path
         d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z"
