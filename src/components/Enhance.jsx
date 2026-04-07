@@ -10,7 +10,7 @@ const Enhance = () => {
     backgroundRepeat: "no-repeat",
   };
   return (
-    <Section className="pt-35">
+    <Section className="pt-35 pb-17.5">
       <Container>
         <div style={bgImage} className="">
           <div className="text-white flex flex-col items-start justify-start gap-8 max-w-[540px] py-17.25 pl-14">

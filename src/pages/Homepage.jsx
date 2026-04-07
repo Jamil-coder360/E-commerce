@@ -5,6 +5,7 @@ import BestSell from '../components/BestSell'
 import ProductDetailPage from './ProductDetailPage'
 import Enhance from '../components/Enhance'
 import Cetagories from '../components/Cetagories'
+import Explore from '../components/Explore'
 
 const Homepage = () => {
   return (
@@ -14,6 +15,7 @@ const Homepage = () => {
     <Cetagories />
     <BestSell />
     <Enhance />
+    <Explore />
     {/* <ProductDetailPage /> */}
     </>
   )

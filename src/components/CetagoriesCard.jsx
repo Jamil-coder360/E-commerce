@@ -42,7 +42,7 @@ const CetagoriesCard = () => {
   ];
 
   return (
-    <div className="flex gap-4">
+    <div className="grid grid-cols-6 gap-7.5">
       {cardData.map((item) => (
         <div
           key={item.id}
