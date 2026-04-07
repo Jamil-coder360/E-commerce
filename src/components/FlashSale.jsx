@@ -4,6 +4,7 @@ import image from "../assets/product/image.png";
 import Timmer from "./Timmer";
 import Button from "./Button";
 import SectionHeader from "./section/SectionHeader";
+import Arrows from "./section/Arrows";
 const FlashSale = ({ product }) => {
   // products.js
 
@@ -62,11 +63,16 @@ const FlashSale = ({ product }) => {
               Flash Sales
             </h2>
           </div> */}
+          <div className="flex items-center justify-center gap-21.75 ">
+
           <SectionHeader 
           title="Flash Sales"
           subtitle="Today’s"
           />
           <Timmer />
+          </div>
+
+          <Arrows />
         </div>
         <div className="mb-10"></div>
         <div className="grid grid-cols-4 gap-6">
