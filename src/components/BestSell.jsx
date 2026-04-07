@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import ProductCard from "./ProductCart";
 import image from "../assets/product/image.png";
+import SectionHeader from "./section/SectionHeader";
 
 const BestSell = () => {
       const products = [
@@ -95,14 +96,18 @@ const BestSell = () => {
       <div className="container mx-auto">
         <div className="flex items-center justify-between pb-15">
 
-        <div className="flex flex-col gap-4">
+        {/* <div className="flex flex-col gap-4">
           <p className="text-[16px] font-semibold text-[#DB4444] mb-6">
             This Month
           </p>
           <h2 className="text-[36px] font-semibold text-[#000000] leading-[1.4]">
            Best Selling Products
           </h2>
-        </div>
+        </div> */}
+        <SectionHeader 
+        title="Best Selling Products"
+        subtitle="This Month"
+        />
         <Button>View All</Button>
         </div>
         <div>

@@ -3,6 +3,7 @@ import ProductCard from "./ProductCart";
 import image from "../assets/product/image.png";
 import Timmer from "./Timmer";
 import Button from "./Button";
+import SectionHeader from "./section/SectionHeader";
 const FlashSale = ({ product }) => {
   // products.js
 
@@ -53,14 +54,18 @@ const FlashSale = ({ product }) => {
     <section className="bg-white pb-15">
       <div className="container mx-auto py-10">
         <div className="flex items-center justify-between mb-10">
-          <div className="flex flex-col gap-4">
+          {/* <div className="flex flex-col gap-4">
             <p className="text-[16px] font-semibold text-[#DB4444] mb-6">
               Today’s
             </p>
             <h2 className="text-[36px] font-semibold text-[#000000] leading-[1.4]">
               Flash Sales
             </h2>
-          </div>
+          </div> */}
+          <SectionHeader 
+          title="Flash Sales"
+          subtitle="Today’s"
+          />
           <Timmer />
         </div>
         <div className="mb-10"></div>

@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 75.125rem;
+
+  /* Colors */
+  --color-secondary: #DB4444;
+  --color-gold: #FFAD33;
+  --color-F5F5F5: #F5F5F5;
+  --color-border: rgba(0, 0, 0, 0.3);
+}
