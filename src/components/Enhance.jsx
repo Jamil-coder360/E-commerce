@@ -1,8 +1,12 @@
-
+// import all reusuable component
 import Section from "../components/section/Section";
 import Container from "../components/section/Container";
+
+// import Image
 import jbl from "../assets/jbl.png";
+
 const Enhance = () => {
+  // use for background Image
   const bgImage = {
     backgroundImage: `url(${jbl})`,
     backgroundSize: "cover",
@@ -20,6 +24,7 @@ const Enhance = () => {
             <h3 className="text-[48px] leading-[1.2] font-semibold  tracking-[4%]">
               Enhance Your Music Experience
             </h3>
+            {/* timmer design */}
             <div className="flex items-center justify-start gap-6 ">
               <div className="flex flex-col items-center justify-center gap-1 rounded-full text-[#000000] bg-white w-15.5 h-15.5 p-4">
                 <span className="text-base font-semibold">23</span>

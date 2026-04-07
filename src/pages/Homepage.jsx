@@ -6,6 +6,7 @@ import ProductDetailPage from './ProductDetailPage'
 import Enhance from '../components/Enhance'
 import Cetagories from '../components/Cetagories'
 import Explore from '../components/Explore'
+import Arrival from '../components/Arrival'
 
 const Homepage = () => {
   return (
@@ -16,6 +17,7 @@ const Homepage = () => {
     <BestSell />
     <Enhance />
     <Explore />
+    <Arrival />
     {/* <ProductDetailPage /> */}
     </>
   )

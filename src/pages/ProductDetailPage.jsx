@@ -69,7 +69,7 @@ const ProductDetailPage = () => {
 							<strong className="text-[24px] font-normal pt-4 text-[#000000]">
 								$192.00
 							</strong>
-							<p className="text-[14px] leading-[1.5] font-normal text-[#000000] max-w-[373px] py-6">
+							<p className="text-[14px] leading-normal font-normal text-[#000000] max-w-93.25 py-6">
 								PlayStation 5 Controller Skin High quality vinyl with air
 								channel adhesive for easy bubble free install & mess free
 								removal Pressure sensitive.
@@ -134,7 +134,7 @@ const ProductDetailPage = () => {
 									<img src={delivery} alt="Delivery Icon" />
 									<div className="flex flex-col gap-2">
 										<h4 className=" text-base font-medium">Free Delivery</h4>
-										<p className="text-[12px] leading-[1.5] font-medium">
+										<p className="text-[12px] leading-normal font-medium">
 											Enter your postal code for Delivery Availability
 										</p>
 									</div>
@@ -143,7 +143,7 @@ const ProductDetailPage = () => {
 									<img src={preturn} alt="Return Icon" />
 									<div className="flex flex-col gap-2">
 										<h4 className=" text-base font-medium">Return Delivery</h4>
-										<p className="text-[12px] leading-[1.5] font-medium">
+										<p className="text-[12px] leading-normal font-medium">
 											Free 30 Days Delivery Returns. Details
 										</p>
 									</div>

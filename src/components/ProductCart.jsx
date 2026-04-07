@@ -6,10 +6,10 @@ import EyeIcon from "./Icons/EyeIcon";
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="overflow-hidden w-[270px]">
+    <div className="overflow-hidden w-67.5">
       <div className="bg-F5F5F5 rounded-sm flex items-center justify-center p-4 relative group">
         {product.discount && (
-          <span className="absolute top-4 left-4 z-10 bg-[#DB4444] text-white rounded-xs inline-block py-1 px-2">
+          <span className="absolute top-4 left-4 z-10 bg-secondary text-white rounded-xs inline-block py-1 px-2">
             -{product.discount}%
           </span>
         )}
@@ -34,7 +34,7 @@ const ProductCard = ({ product }) => {
         <h4 className="text-black font-medium">{product.name}</h4>
 
         <p className="py-2">
-          <span className="text-[#DB4444]">${product.price}</span>{" "}
+          <span className="text-secondary">${product.price}</span>{" "}
           <del className="text-[#000000]/50">${product.oldPrice}</del>
         </p>
 

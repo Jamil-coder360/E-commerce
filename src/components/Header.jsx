@@ -15,7 +15,6 @@ const Header = () => {
             <Link to="/shop">
               <button className="border-b border-[#FAFAFA]">ShopNow</button>
             </Link>
-            {/* <input type="text" /> */}
           </div>
           <select>
             <option value="English">English</option>
