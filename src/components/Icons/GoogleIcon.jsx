@@ -1,5 +1,5 @@
 
-const G_Icon = ({width="24",height="24" }) => {
+const GoogleIcon = ({width="24",height="24" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -35,4 +35,4 @@ const G_Icon = ({width="24",height="24" }) => {
   );
 };
 
-export default G_Icon;
+export default GoogleIcon;

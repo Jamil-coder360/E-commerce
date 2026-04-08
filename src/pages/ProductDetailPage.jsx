@@ -3,8 +3,8 @@ import React from "react";
 import Section from "../components/section/Section";
 import Container from "../components/section/Container";
 // import { HeartIcon, StarIcon } from "../components/icons";
-import HeartIcon from "../components/icons/WishlistIcon";
-import StarIcon from "../components/icons/StarIcon";
+import HeartIcon from "../components/Icons/WishlistIcon";
+import StarIcon from "../components/Icons/StarIcon";
 // import Button from "../components/Button";
 
 // import Image for product veiw

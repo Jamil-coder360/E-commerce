@@ -1,5 +1,5 @@
 import Section from "../components/section/Section";
-import Google from "../components/icons/G_Icon.jsx";
+import GoogleIcon from "../components/Icons/GoogleIcon";
 import Side from "../assets/side.png";
 import Button from "../components/Button";
 import { Link } from "react-router";
@@ -43,7 +43,7 @@ const SignUpPage = () => {
           <div className="flex flex-col items-center justify-between gap-4 w-full pt-10">
             <Button className="w-full">Create Account</Button>
             <Button className="w-full" variant="white">
-              <Google /> Sign up with Google
+              <GoogleIcon /> Sign up with Google
             </Button>
           </div>
           <div className="flex items-center justify-center gap-4 pt-8">

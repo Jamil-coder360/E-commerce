@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
-import WishlistIcon from "./icons/WishlistIcon";
-import CartIcon from "./icons/CartIcon";
+import WishlistIcon from "./Icons/WishlistIcon";
+import CartIcon from "./Icons/CartIcon";
 
 const Navbar = () => {
   // Navber data list
