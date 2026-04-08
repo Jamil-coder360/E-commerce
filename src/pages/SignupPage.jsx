@@ -1,11 +1,12 @@
-import Section from "../components/section/Section";
-import Google from "../components/Icons/Google";
-import Side from "../assets/side.png";
-import Button from "../components/Button";
-import { Link } from "react-router";
+import React from 'react'
+import Section from '../components/section/Section'
+import Button from '../components/Button'
+import Google from "../components/Icons/Google"
+import Side from "../assets/side.png"
+import { Link } from 'react-router'
 const SignUpPage = () => {
   return (
-    <Section className="pt-15 pb-35">
+       <Section className="pt-15 pb-35">
       <div className="grid grid-cols-[auto_1fr] items-center gap-[129px]">
         <div>
           <img src={Side} alt="" />
@@ -59,7 +60,7 @@ const SignUpPage = () => {
         </div>
       </div>
     </Section>
-  );
-};
+  )
+}
 
-export default SignUpPage;
+export default SignUpPage
