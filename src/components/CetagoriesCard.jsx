@@ -2,12 +2,12 @@
 import { v4 as uuidv4 } from 'uuid';
 
 // import all icon component for cetagoriescard
-import MobileIcon from "../components/Icons/MobileIcon";
-import MonitorIcon from "../components/Icons/MonitorIcon"
-import CameraIcon from "./Icons/CameraIcon";
-import WatchIcon from "../components/Icons/WatchIcon"
-import HeadphoneIcon from "../components/Icons/HeadphoneIcon"
-import GamepadeIcon from "../components/Icons/GamepadeIcon"
+import MobileIcon from "./icons/MobileIcon";
+import MonitorIcon from "./icons/MonitorIcon"
+import CameraIcon from "./icons/CameraIcon";
+import WatchIcon from "./icons/WatchIcon"
+import HeadphoneIcon from "./icons/HeadphoneIcon"
+import GamepadeIcon from "./icons/GamepadeIcon"
 
 const CetagoriesCard = () => {
 
