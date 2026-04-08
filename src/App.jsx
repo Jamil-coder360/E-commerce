@@ -4,7 +4,7 @@ import { RouterProvider } from "react-router/dom";
 import Homepage from './pages/Homepage';
 import LoginPage from './pages/LoginPage';
 import NotfoundPage from './pages/NotfoundPage';
-import SignUpPage from "./pages/SignUpPage.jsx";
+// import SignUpPage from "./pages/SignUpPage.jsx";
 import ProductDetailPage from './pages/ProductDetailPage';
 import AboutPage from './pages/AboutPage';
 
@@ -25,10 +25,10 @@ const router = createBrowserRouter([
 				path: "about",
 				element: <AboutPage />,
 			},
-			{
-				path: "signup",
-				element: <SignUpPage />,
-			},
+			// {
+			// 	path: "signup",
+			// 	element: <SignUpPage />,
+			// },
 			{
 				path: "product/:id",
 				element: <ProductDetailPage />,
