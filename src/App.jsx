@@ -4,7 +4,7 @@ import { RouterProvider } from "react-router/dom";
 import Homepage from './pages/Homepage';
 import LoginPage from './pages/LoginPage';
 import NotfoundPage from './pages/NotfoundPage';
-import SignUpPage from './pages/SignUpPage';
+import SignUpPage from "./pages/SignUpPage.jsx";
 import ProductDetailPage from './pages/ProductDetailPage';
 import AboutPage from './pages/AboutPage';
 
