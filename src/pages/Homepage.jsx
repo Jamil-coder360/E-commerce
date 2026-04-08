@@ -7,6 +7,7 @@ import Enhance from '../components/Enhance'
 import Cetagories from '../components/Cetagories'
 import Explore from '../components/Explore'
 import Arrival from '../components/Arrival'
+import Service from '../components/Service'
 
 const Homepage = () => {
   return (
@@ -18,6 +19,7 @@ const Homepage = () => {
     <Enhance />
     <Explore />
     <Arrival />
+    <Service />
     {/* <ProductDetailPage /> */}
     </>
   )
