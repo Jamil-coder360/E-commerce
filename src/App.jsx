@@ -5,7 +5,7 @@ import { RouterProvider } from "react-router/dom";
 import Homepage from './pages/Homepage';
 import LoginPage from './pages/LoginPage';
 import NotfoundPage from './pages/NotfoundPage';
-import SignupPage from './pages/SignupPage';
+import SignUpPage from './pages/SignUpPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 
 const router = createBrowserRouter([
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "signup",
-				element: <SignupPage />,
+				element: <SignUpPage />,
 			},
 			{
 				path: "product/:id",
