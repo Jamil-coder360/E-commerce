@@ -106,12 +106,7 @@ const AboutPage = () => {
       aperiam cumque fugiat reprehenderit expedita tempora minima veniam ullam.
       Eaque voluptate vero odio mollitia esse, aliquid neque praesentium
       corrupti dolor provident architecto deleniti nostrum repudiandae ducimus
-      commodi asperiores quos. Debitis ipsa nam quaerat sequi laudantium ipsum,
-      labore incidunt assumenda? Quaerat illum quia suscipit provident nobis,
-      delectus tempore sequi ipsam unde architecto? Excepturi culpa ut
-      cupiditate deleniti dicta, id est autem harum voluptatibus quasi!
-      Repellendus laudantium quaerat cumque, facere maiores corrupti
-      perspiciatis.
+  
     </div>
   );
 };
