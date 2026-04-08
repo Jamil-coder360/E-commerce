@@ -1,5 +1,5 @@
 import Section from "../components/section/Section";
-import Google from "../components/icons/Google";
+import Google from "../components/Icons/Google";
 import Side from "../assets/side.png";
 import Button from "../components/Button";
 import { Link } from "react-router";
