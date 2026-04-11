@@ -5,11 +5,17 @@ import SectionHeader from "./section/SectionHeader";
 import Arrows from "./section/Arrows";
 import ProductCard from "./ProductCart";
 import Button from "./Button";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/grid";
 // "exploreOurProductsData" data list for  explore page
 import { ExploreOurProductsData } from "../data";
+import { useRef } from "react";
+import { Grid } from "swiper/modules";
 
 const Explore = () => {
+  const swiperRef = useRef(null);
+
   return (
     <Section className="pb-42">
       <Container>
@@ -19,14 +25,35 @@ const Explore = () => {
               title="Explore Our Products"
               subtitle="Our Products"
             />
-            <Arrows />
+            <Arrows swiperRef={swiperRef} />
           </div>
-          <div className="grid grid-cols-4 gap-x-7.5 gap-y-15  pt-15">
-            {/* product mapping from "ExploreOurProductsData"  data list */}
-            {ExploreOurProductsData.map((product) => (
-              <ProductCard key={product.id} product={product} />
+          {/* <div className="grid grid-cols-4 gap-x-7.5 gap-y-15  pt-15">
+            product mapping from "ExploreOurProductsData"  data list
+            
             ))}
-          </div>
+          </div> */}
+
+          <>
+            <Swiper
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
+              modules={[Grid]}
+              grid={{
+                rows: 2,
+                fill: "row",
+              }}
+              loop={true}
+              slidesPerView={4}
+              spaceBetween={30}
+              className="mySwiper"
+            >
+              {ExploreOurProductsData.map((product) => (
+                <SwiperSlide key={product.id}>
+                  <ProductCard product={product} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </>
+
           <div className="flex items-center justify-center pt-15">
             <Button>View All Products</Button>
           </div>
