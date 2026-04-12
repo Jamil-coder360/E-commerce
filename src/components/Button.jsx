@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = ({ children, onClick, variant = "red",className="" }) => {
+const Button = ({Tagname="button",  children, onClick, variant = "red",className="", ...props }) => {
   // button base class always use it on button 
   const baseClasses = "flex items-center justify-center gap-4 px-12 py-4 rounded-md font-medium";
 
@@ -13,9 +13,9 @@ const Button = ({ children, onClick, variant = "red",className="" }) => {
 
 // button body
   return (
-    <button className={`${baseClasses} ${variantClasses[variant]} ${className}`} onClick={onClick}>
+    <Tagname {...props} className={`${baseClasses} ${variantClasses[variant]} ${className}`} onClick={onClick}>
       {children}
-    </button>
+    </Tagname>
   )
 }
 

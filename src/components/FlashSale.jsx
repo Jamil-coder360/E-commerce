@@ -9,12 +9,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // import "FlashSellingProductsData" data list for flashsale page
 import { FlashSellingProductsData } from "../data";
 import { useRef } from "react";
+import Section from "./section/Section";
+import Container from "./section/Container";
 
 const FlashSale = ({ product }) => {
   const swiperRef = useRef(null);
   return (
-    <section className="bg-white">
-      <div className="container mx-auto py-15 border-b border-border">
+    <Section>
+      <Container className="pb-15 border-b border-border">
         <div className="flex items-center justify-between mb-10">
          
           <div className="flex items-center justify-center gap-21.75 ">
@@ -54,10 +56,10 @@ const FlashSale = ({ product }) => {
         </>
 
         <div className="flex items-center justify-center mt-10.5">
-          <Button>View All Products</Button>
+          <Button Tagname="a"  href="/product" >View All Products</Button>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

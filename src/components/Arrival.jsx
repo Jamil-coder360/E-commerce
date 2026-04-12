@@ -9,7 +9,7 @@ import Arrive_3 from "../assets/arive-3.png";
 import Arrive_4 from "../assets/arive-4.png";
 const Arrival = () => {
   return (
-    <Section className="pb-35">
+    <Section>
       <Container>
         <div>
           <div className="flex items-center justify-center pb-15">

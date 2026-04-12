@@ -9,12 +9,13 @@ import { Pagination } from "swiper/modules";
 import { Link } from "react-router";
 const Banner = () => {
   return (
-    <section className="bg-white pt-10 pb-41.25">
+    <section className=" pt-10 pb-41.25">
       <div className="container mx-auto">
         <div className="grid grid-cols-[300px_auto]">
           <SideMenu />
           <div className="w-[892px] ">
             <Swiper
+            loop={true}
               pagination={{
                 dynamicBullets: true,
               }}

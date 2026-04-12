@@ -17,7 +17,7 @@ import { BestSellingProductsData } from "../data";
 const BestSell = () => {
  
   return (
-    <section className="bg-white">
+    <section>
       <div className="container mx-auto pt-17.5 border-t border-border">
         {" "}
         {/*use padding here for border bottom other wise it will be une on section */}
@@ -25,7 +25,7 @@ const BestSell = () => {
           {/* use a section header for best sell */}
 
           <SectionHeader title="Best Selling Products" subtitle="This Month" />
-          <Button>View All</Button>
+          <Button Tagname="a" href="/product">View All</Button>
         </div>
         <div>
           {/* swiper slider start */}

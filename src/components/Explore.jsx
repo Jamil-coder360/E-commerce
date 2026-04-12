@@ -55,7 +55,7 @@ const Explore = () => {
           </>
 
           <div className="flex items-center justify-center pt-15">
-            <Button>View All Products</Button>
+            <Button Tagname="a" href="/product" >View All Products</Button>
           </div>
         </div>
       </Container>
