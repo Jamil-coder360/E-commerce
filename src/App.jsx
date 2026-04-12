@@ -8,6 +8,7 @@ import ProductDetailPage from './pages/ProductDetailPage';
 import AboutPage from './pages/AboutPage';
 import SignUpPage from './pages/SingUp';
 import ProductPage from './pages/ProductPage';
+import ContactPage from './pages/ContactPage';
 
 const router = createBrowserRouter([
 	{
@@ -30,10 +31,10 @@ const router = createBrowserRouter([
 				path: "product",
 				element: <ProductPage />,
 			},
-			// 	{
-			// 	path: "contact",
-			// 	element: <Contact />,
-			// },
+				{
+				path: "contact",
+				element: <ContactPage />,
+			},
 			{
 				path: "signup",
 				element: <SignUpPage />,
