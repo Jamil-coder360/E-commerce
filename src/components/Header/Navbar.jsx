@@ -4,7 +4,7 @@ import WishlistIcon from "../Icons/WishlistIcon";
 import CartIcon from "../Icons/CartIcon";
 import { User } from "lucide-react";
 import ProfileDropdown from "./ProfileDropdown";
-import { AuthContext } from "../../context/authContext";
+import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
   const { user } = useContext(AuthContext);
