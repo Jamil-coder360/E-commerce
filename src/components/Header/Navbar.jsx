@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router";
-import WishlistIcon from "./Icons/WishlistIcon";
-import CartIcon from "./Icons/CartIcon";
+import WishlistIcon from "../Icons/WishlistIcon";
+import CartIcon from "../Icons/CartIcon";
+import { User } from "lucide-react";
+import ProfileDropdown from "./ProfileDropdown";
+import { AuthContext } from "../../context/authContext";
 
 const Navbar = () => {
+  const { user } = useContext(AuthContext);
   // Navber data list
   const menuItems = [
     { id: 1, name: "Home", path: "/" },
@@ -47,8 +51,21 @@ const Navbar = () => {
               type="text"
               placeholder="Search..."
             />
-            <WishlistIcon />
+            <WishlistIcon/>
             <CartIcon />
+            {user && (
+									<div className="relative">
+										<div className="cursor-pointer group">
+											<User />
+
+											<ProfileDropdown
+												className={
+													"transition-all group-hover:visible invisible opacity-0 group-hover:opacity-100"
+												}
+											/>
+										</div>
+									</div>
+								)}
           </div>
         </div>
       </div>
