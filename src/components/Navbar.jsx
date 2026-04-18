@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router";
-import WishlistIcon from "../components/Icons/WishlistIcon";
-import CartIcon from "../components/Icons/CartIcon";
+import WishlistIcon from "./Icons/WishlistIcon";
+import CartIcon from "./Icons/CartIcon";
 import { User } from "lucide-react";
 import ProfileDropdown from "./ProfileDropdown";
 import { AuthContext } from "../context/authContext";
