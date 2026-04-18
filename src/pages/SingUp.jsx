@@ -5,14 +5,17 @@ import Button from "../components/Button";
 import { Link } from "react-router";
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router";
 
 
 const SignUpPage = () => {
+  const navigate =useNavigate();
   const {signUp,signUpWithGoogle} = useContext(AuthContext);
  const [userValue,setUserValue]= useState({
   name:"",
   email:"",
   password:""
+
  }) 
 
  const handleInputChange = (e) => {
@@ -27,7 +30,15 @@ console.log(userValue);
 
 
 const handleSingup = () =>{
-  signUp(userValue.email,userValue.password );
+  signUp(userValue.name, userValue.email,userValue.password );
+
+  setUserValue({
+      name:"",
+  email:"",
+  password:""
+
+})
+navigate("/login");
   console.log(signUp);
 };
 
@@ -50,6 +61,7 @@ const handleSingup = () =>{
               type="text"
               name="name"
               id=""
+              value={userValue.name}
               placeholder="name"
               onChange={(e)=> handleInputChange(e)}
             />
@@ -58,6 +70,7 @@ const handleSingup = () =>{
               type="text"
               name="email"
               id=""
+              value={userValue.email}
               placeholder="Email or Phone Number"
               onChange={(e)=> handleInputChange(e)}
 
@@ -67,6 +80,7 @@ const handleSingup = () =>{
               type="password"
               name="password"
               id=""
+              value={userValue.password}
               placeholder="Password"
               onChange={(e)=> handleInputChange(e)}
 
