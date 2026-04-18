@@ -16,7 +16,7 @@ const menuItems = [
 	// { label: "Logout", icon: LogOut, divider: true },
 ];
 const ProfileDropdown = ({ className }) => {
-	const { user, logOutUser, abc } = useContext(AuthContext);
+	const { user, logOut, abc } = useContext(AuthContext);
 
 	console.log(abc);
 	return (
@@ -42,7 +42,7 @@ const ProfileDropdown = ({ className }) => {
 						text-white/85 hover:bg-purple-500/20 transition-colors duration-150 mt-1 border-t border-white/10 pt-3
 						}
 					`}
-					onClick={logOutUser}
+					onClick={logOut}
 				>
 					<LogOutIcon size={18} className="text-white/60 shrink-0" />
 					<span>Logout</span>
