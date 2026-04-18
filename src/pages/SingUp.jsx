@@ -3,15 +3,31 @@ import GoogleIcon from "../components/Icons/GoogleIcon";
 import Side from "../assets/side.png";
 import Button from "../components/Button";
 import { Link } from "react-router";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 
 const SignUpPage = () => {
-const {signUp} = useContext(AuthContext);
+  const {signUp,signUpWithGoogle} = useContext(AuthContext);
+ const [userValue,setUserValue]= useState({
+  name:"",
+  email:"",
+  password:""
+ }) 
+
+ const handleInputChange = (e) => {
+  const {name, value} = e.target;
+  setUserValue((prev) => {
+    return{...prev, [name]:value};
+  });
+console.log(userValue);
+  // console.log(e.target.name);
+  // console.log(e.target.value);
+ };
+
 
 const handleSingup = () =>{
-  signUp("mindgame@gmial.com","password" );
+  signUp(userValue.email,userValue.password );
   console.log(signUp);
 };
 
@@ -32,28 +48,33 @@ const handleSingup = () =>{
             <input
               className="border-b border-border focus:outline-0 placeholder:text-[#000000]/40"
               type="text"
-              name=""
+              name="name"
               id=""
               placeholder="name"
+              onChange={(e)=> handleInputChange(e)}
             />
             <input
               className="border-b border-border focus:outline-0 placeholder:text-[#000000]/40"
               type="text"
-              name=""
+              name="email"
               id=""
               placeholder="Email or Phone Number"
+              onChange={(e)=> handleInputChange(e)}
+
             />
             <input
               className="border-b border-border focus:outline-0 placeholder:text-[#000000]/40"
               type="password"
-              name=""
+              name="password"
               id=""
               placeholder="Password"
+              onChange={(e)=> handleInputChange(e)}
+
             />
           </form>
           <div className="flex flex-col items-center justify-between gap-4 w-full pt-10">
             <Button onClick={handleSingup} className="w-full">Create Account</Button>
-            <Button  className="w-full" variant="white">
+            <Button onClick={()=>signUpWithGoogle()}  className="w-full" variant="white">
               <GoogleIcon /> Sign up with Google
             </Button>
           </div>
