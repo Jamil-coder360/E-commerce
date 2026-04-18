@@ -3,7 +3,18 @@ import GoogleIcon from "../components/Icons/GoogleIcon";
 import Side from "../assets/side.png";
 import Button from "../components/Button";
 import { Link } from "react-router";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+
+
 const SignUpPage = () => {
+const {signUp} = useContext(AuthContext);
+
+const handleSingup = () =>{
+  signUp("mindgame@gmial.com","password" );
+  console.log(signUp);
+};
+
   return (
     <Section className="pt-15 pb-35">
       <div className="grid grid-cols-[auto_1fr] items-center gap-[129px]">
@@ -41,8 +52,8 @@ const SignUpPage = () => {
             />
           </form>
           <div className="flex flex-col items-center justify-between gap-4 w-full pt-10">
-            <Button className="w-full">Create Account</Button>
-            <Button className="w-full" variant="white">
+            <Button onClick={handleSingup} className="w-full">Create Account</Button>
+            <Button  className="w-full" variant="white">
               <GoogleIcon /> Sign up with Google
             </Button>
           </div>
