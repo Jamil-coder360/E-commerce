@@ -6,7 +6,7 @@ import {
 	LogOut as LogOutIcon,
 } from "lucide-react";
 import { useContext } from "react";
-import { AuthContext } from "../../context/authContext";
+import { AuthContext } from "../context/authContext";
 
 const menuItems = [
 	{ label: "Manage My Account", icon: User },
