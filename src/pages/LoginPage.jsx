@@ -6,7 +6,9 @@ import Section from "../components/section/Section";
 import Side from "../assets/side.png";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router";
 const LoginPage = () => {
+  const navigate = useNavigate();
   const {login} =useContext(AuthContext);
   const handleLogin = (e)=>{
   e.preventDefault();
@@ -27,11 +29,16 @@ for (let [key,value] of fromData) {
     alert("Please fill all fields");
     return;
   }
-
-login(data.email, data.password);
-
-  //for practice 
-  // console.log(fromData.get("email"));
+  login(data.email, data.password)
+    .then((res) => {
+      // ✅ success হলে
+      navigate("/");
+    })
+    .catch((error) => {
+      // ❌ error হলে
+      console.error("Login error:", error);
+      alert("Login failed ❌");
+    });
   // console.log(fromData.get("password"));
   };
 

@@ -2,11 +2,13 @@ import React, { useContext } from "react";
 import { Link } from "react-router";
 import WishlistIcon from "./Icons/WishlistIcon";
 import CartIcon from "./Icons/CartIcon";
-import { User } from "lucide-react";
+import { SunIcon, User , MoonIcon } from "lucide-react";
 import ProfileDropdown from "./ProfileDropdown";
 import { AuthContext } from "../context/AuthContext";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Navbar = () => {
+   const { theme, themeChange } = useContext(ThemeContext);
   const { user } = useContext(AuthContext);
   console.log(user);
   // Navber data list
@@ -23,7 +25,7 @@ const Navbar = () => {
   ];
 
   return (
-    <section className="bg-white pt-11.75 pb-6.75 border-b border-[#000000]">
+    <section className="bg-white dark:bg-black pt-11.75 pb-6.75 border-b border-[#000000]">
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <div>
@@ -67,6 +69,20 @@ const Navbar = () => {
 										</div>
 									</div>
 								)}
+
+          <div className="relative w-6 h-6">
+  <SunIcon
+    onClick={themeChange}
+    className={`absolute inset-0 text-yellow-400 transition-all duration-500 cursor-pointer 
+    ${theme === "dark" ? "rotate-0 opacity-0" : "rotate-180 opacity-100"}`}
+  />
+
+  <MoonIcon
+    onClick={themeChange}
+    className={`absolute fill-blue-300 inset-0 text-gray-700 dark:text-white transition-all duration-500 cursor-pointer 
+    ${theme === "light" ? "rotate-180 opacity-0" : "rotate-0 opacity-100"}`}
+  />
+</div>
           </div>
         </div>
       </div>

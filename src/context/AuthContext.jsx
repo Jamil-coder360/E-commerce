@@ -10,12 +10,12 @@ export const AuthContext  =createContext ({
 
 const AuthProvider = ({children}) =>{
     const [user,setUser] = useState(null);
-    // useEffect(()=>{
-    //   const unSubscribe = auth.onAuthStateChanged((currentUser)=>{
-    //     setUser(currentUser);
-    //   })
-    //   return unSubscribe;
-    // },[])
+    useEffect(()=>{
+      const unSubscribe = auth.onAuthStateChanged((currentUser)=>{
+        setUser(currentUser);
+      })
+      return unSubscribe;
+    },[])
 
 const signUp = (email,password) => {
 
@@ -67,21 +67,20 @@ signOut(auth).then(() => {
 });
 }
 
-const login = (email,password)=>{
-  signInWithEmailAndPassword(auth, email, password)
+const login =  (email, password) => {
+  return( signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-      auth.onAuthStateChanged((currentUser)=>{
-        setUser(currentUser);
-      })
+    alert("login succesful")
     // ...
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-  });
-}
+    alert(errorMessage);
+  }));
+};
 
     return<AuthContext value={{user,setUser,signUp,signUpWithGoogle,logOut,login}}>
         {children}
