@@ -7,7 +7,7 @@ const ThemeProvider = ({ children }) => {
 
   const themeChange = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
-     document.documentElement.classList.toggle("dark", theme === "dark");
+     document.documentElement.classList.toggle("dark");
   };
 
   return (

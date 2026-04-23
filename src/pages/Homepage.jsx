@@ -8,10 +8,12 @@ import Cetagories from '../components/Cetagories'
 import Explore from '../components/Explore'
 import Arrival from '../components/Arrival'
 import Service from '../components/Service'
+// import LoadingPage from './LoadingPage'
 
 const Homepage = () => {
   return (
     <>
+    {/* <LoadingPage /> */}
     <Banner />
     <FlashSale />
     <Cetagories />

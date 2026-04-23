@@ -1,10 +1,29 @@
 import { Outlet } from "react-router";
 import Header from "./Header";
 import Footer from "./Footer";
+import { useEffect, useState } from "react";
+import LoadingPage from "../pages/LoadingPage";
+import { useLocation } from "react-router";
 // import { useContext } from "react";
 // import { ThemeContext } from "../context/ThemeContext";
 
 const Root = () => {
+
+	const [loading,setLoading] =useState("true");
+const location = useLocation();
+  useEffect(() => {
+	setLoading(true);
+
+	const timer = setTimeout(() => {
+	  setLoading(false);
+	}, 1000);
+
+	return () => clearTimeout(timer);
+  }, [location.pathname]);
+
+  if (loading) {
+    return <LoadingPage /> ;
+  }
 	// const { theme,handleThemeChange } = useContext(ThemeContext);
 	// console.log(theme);
 
