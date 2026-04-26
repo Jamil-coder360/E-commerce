@@ -8,7 +8,7 @@ const SectionHeader = ({title, subtitle}) => {
             <span className='h-10 w-5 bg-secondary rounded-sm inline-block'></span>
             <span className='text-secondary'>{subtitle}</span>
         </p>
-        <h2 className='text-[36px] font-semibold'>{title}</h2>
+        <h2 className='text-[36px] text-black dark:text-white font-semibold'>{title}</h2>
     </div>
 
 // previus code 

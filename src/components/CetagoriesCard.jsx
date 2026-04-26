@@ -66,12 +66,12 @@ const CetagoriesCard = ({swiperRef}) => {
       >
         {cardData.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="flex flex-col items-center justify-center hover:bg-secondary group p-4 w-42.5 h-33.75 border border-border rounded hover:bg-black transition">
+            <div className="flex flex-col items-center justify-center hover:bg-secondary bg-F5F5F5 group p-4 w-42.5 h-33.75 border border-border rounded  transition">
               <div className="group-hover:stroke-F5F5F5 stroke-black transition">
                 {item.icon}
               </div>
 
-              <span className="block mt-2 group-hover:text-F5F5F5 transition">
+              <span className="block mt-2 group-hover:text-F5F5F5  transition">
                 {item.title}
               </span>
             </div>

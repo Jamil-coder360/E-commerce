@@ -6,6 +6,7 @@ import { SunIcon, User, MoonIcon } from "lucide-react";
 import ProfileDropdown from "./ProfileDropdown";
 import { AuthContext } from "../context/AuthContext";
 import { ThemeContext } from "../context/ThemeContext";
+import Logo from "./Icons/Logo";
 
 const Navbar = () => {
   const { theme, themeChange } = useContext(ThemeContext);
@@ -25,12 +26,13 @@ const Navbar = () => {
   ];
 
   return (
-    <section className="bg-white dark:bg-black pt-11.75 pb-6.75 border-b border-[#000000]">
+    <section className="bg-white dark:bg-black pt-11.75 pb-6.75 border-b dark:border-slate-100 border-[#000000]">
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <div>
             <Link to="/">
-              <img src="./logo.svg" alt="logo" />
+              {/* <img src="./logo.svg" alt="logo" /> */}
+              <Logo className="fill-black dark:fill-white" />
             </Link>
           </div>
           <div>
@@ -54,12 +56,12 @@ const Navbar = () => {
               type="text"
               placeholder="Search..."
             />
-            <WishlistIcon />
-            <CartIcon />
+            <WishlistIcon  className="stroke-black dark:stroke-white"/>
+            <CartIcon  className="stroke-black dark:stroke-white" />
             {user && (
               <div className="relative">
                 <div className="cursor-pointer group">
-                  <User />
+                  <User className="text-black dark:text-white" />
 
                   <ProfileDropdown
                     className={

@@ -13,7 +13,7 @@ const Banner = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-[300px_auto]">
           <SideMenu />
-          <div className="w-[892px] ">
+          <div className="w-[892px] dark:border-slate-50 dark:border-1 border-0">
             <Swiper
             loop={true}
               pagination={{
