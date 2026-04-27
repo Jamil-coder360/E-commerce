@@ -111,7 +111,7 @@ import { activeCategory } from "../features/shop/shopSlice";
 const ProductPage = () => {
 const { activeMenu } = useSelector((state) => state.shop);
 // const [activeCategory ,setActiveCategory]= useState();
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [startCount, setStartCount] = useState(0);
   const [endCount, setEndCount] = useState(6);
   const [products, setProducts] = useState([]);
@@ -135,7 +135,7 @@ const dispatch = useDispatch();
   };
   const handleFilter = (catagory) => {
     setUrl(catagory.url);
-    	dispatch(activeCategory(category.name));
+    	dispatch(activeCategory(catagory.name));
   };
   return (
     <Section className={"pb-40"}>
@@ -151,7 +151,7 @@ const dispatch = useDispatch();
               <p className="text-xl pb-4">Shop by Category</p>
 
               	<li
-								className={`text-black flex justify-between gap-2 items-center cursor-pointer hover:text-red-500 mb-4 ${activeMenu === "All" && "text-red-500"}`}
+								className={`text-black flex justify-between gap-2 items-center cursor-pointer hover:text-red-500 mb-4 ${activeMenu === "All" && "text-blue-500"}`}
 								onClick={() => {
 									setUrl("https://dummyjson.com/products");
 									dispatch(activeCategory("All"));
@@ -165,7 +165,7 @@ const dispatch = useDispatch();
                     key={menu.id}
                     onClick={() => handleFilter(menu)}
                     // title={menu.id}
-                   className={`text-black flex justify-between gap-2 items-center cursor-pointer hover:text-red-500 ${activeMenu === menu.name && "text-red-500"}`}
+                   className={`text-black flex justify-between gap-2 items-center cursor-pointer hover:text-red-500 ${activeMenu === menu.name && "text-blue-500"}`}
                   >
                     {/* <Link to={menu.url}>{menu.name}</Link> */}
 
