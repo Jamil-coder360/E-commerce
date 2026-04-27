@@ -7,7 +7,7 @@ import Arrows from "./section/Arrows";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // import "FlashSellingProductsData" data list for flashsale page
-import { FlashSellingProductsData } from "../data";
+// import { FlashSellingProductsData } from "../data";
 import { use, useEffect, useRef, useState } from "react";
 import Section from "./section/Section";
 import Container from "./section/Container";
