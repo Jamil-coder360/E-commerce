@@ -21,7 +21,7 @@ const BestSell = () => {
  const [bestSale , setBestSale] =useState([]);
  
 useEffect(() => {
-  axios.get("http://localhost:3000/bestSelling")
+  axios.get("https://e-commerce-3xlh.onrender.com/bestSelling")
   .then(data => setBestSale(data.data))
  }, [])
   return (

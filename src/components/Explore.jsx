@@ -23,7 +23,7 @@ const Explore = () => {
   // api fetching
   useEffect(() => {
     axios
-      .get("http://localhost:3000/exploreProducts")
+      .get("https://e-commerce-3xlh.onrender.com/exploreProducts")
       .then((res) => setExplore(res.data));
   }, []);
 
