@@ -6,6 +6,8 @@ import { data, Link } from "react-router";
 import { ExploreOurProductsData } from "../data";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { activeCategory } from "../features/shop/shopSlice";
 
 // const menus = [
 // 	{
@@ -107,21 +109,24 @@ import axios from "axios";
 // ];
 
 const ProductPage = () => {
+const { activeMenu } = useSelector((state) => state.shop);
+// const [activeCategory ,setActiveCategory]= useState();
+const dispatch = useDispatch();
   const [startCount, setStartCount] = useState(0);
   const [endCount, setEndCount] = useState(6);
   const [products, setProducts] = useState([]);
   const [menus, setMenus] = useState([]);
   const [showCount, setShowCount] = useState(6);
-  const [url , setUrl] = useState("https://dummyjson.com/products");
+  const [url, setUrl] = useState("https://dummyjson.com/products");
 
   useEffect(() => {
-    axios.get(url)
-      .then(data => setProducts(data.data.products));
+    axios.get(url).then((data) => setProducts(data.data.products));
   }, [url]);
 
   useEffect(() => {
-    axios.get('https://dummyjson.com/products/categories')
-      .then(data => setMenus(data.data));
+    axios
+      .get("https://dummyjson.com/products/categories")
+      .then((data) => setMenus(data.data));
   }, []);
 
   const handleShowMore = (value) => {
@@ -129,8 +134,9 @@ const ProductPage = () => {
     setEndCount(value);
   };
   const handleFilter = (catagory) => {
-	setUrl(catagory);
-  }
+    setUrl(catagory.url);
+    	dispatch(activeCategory(category.name));
+  };
   return (
     <Section className={"pb-40"}>
       <Container>
@@ -143,17 +149,27 @@ const ProductPage = () => {
           <div>
             <div className="pr-4 pt-10">
               <p className="text-xl pb-4">Shop by Category</p>
+
+              	<li
+								className={`text-black flex justify-between gap-2 items-center cursor-pointer hover:text-red-500 mb-4 ${activeMenu === "All" && "text-red-500"}`}
+								onClick={() => {
+									setUrl("https://dummyjson.com/products");
+									dispatch(activeCategory("All"));
+								}}
+							>
+								<span>All</span>
+							</li>
               <ul className="space-y-4">
                 {menus.map((menu) => (
                   <li
                     key={menu.id}
-					onClick={()=> handleFilter (menu.url)}
+                    onClick={() => handleFilter(menu)}
                     // title={menu.id}
-                    className="text-black flex justify-between gap-2 items-center"
+                   className={`text-black flex justify-between gap-2 items-center cursor-pointer hover:text-red-500 ${activeMenu === menu.name && "text-red-500"}`}
                   >
                     {/* <Link to={menu.url}>{menu.name}</Link> */}
 
-					<span>{menu.name}</span>
+                    <span>{menu.name}</span>
                     {/* {menu.submenu.length > 0 && (
                                         <ul>
                                             {menu.submenu.map((submenu) => (

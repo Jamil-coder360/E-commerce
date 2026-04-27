@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  activeMenu: 'All',
+  activeMenu: "All",
 }
 
 export const shopSlice = createSlice({
