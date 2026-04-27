@@ -81,7 +81,7 @@ signOut(auth).then(() => {
 //     alert(errorMessage);
 //   }));
 // };
-const login = ()=>{
+const login = (email , password)=>{
   return signInWithEmailAndPassword(auth, email, password)
 }
 

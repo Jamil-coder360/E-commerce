@@ -31,11 +31,9 @@ for (let [key,value] of fromData) {
   }
   login(data.email, data.password)
     .then((res) => {
-      // ✅ success হলে
       navigate("/");
     })
     .catch((error) => {
-      // ❌ error হলে
       console.error("Login error:", error);
       alert("Login failed ❌");
     });
