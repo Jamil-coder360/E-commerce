@@ -67,20 +67,23 @@ signOut(auth).then(() => {
 });
 }
 
-const login =  (email, password) => {
-  return( signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    alert("login succesful")
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage);
-  }));
-};
+// const login =  (email, password) => {
+//   return( signInWithEmailAndPassword(auth, email, password)
+//   .then((userCredential) => {
+//     // Signed in 
+//     const user = userCredential.user;
+//     alert("login succesful")
+//     // ...
+//   })
+//   .catch((error) => {
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//     alert(errorMessage);
+//   }));
+// };
+const login = ()=>{
+  return signInWithEmailAndPassword(auth, email, password)
+}
 
     return<AuthContext value={{user,setUser,signUp,signUpWithGoogle,logOut,login}}>
         {children}

@@ -57,16 +57,18 @@ const Navbar = () => {
               placeholder="Search..."
             />
             <div className="relative">
-              <WishlistIcon className="stroke-black dark:stroke-white " />
-              <span className="bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-2">
-                0
-              </span>
+
+            <WishlistIcon className="stroke-black dark:stroke-white " />
+            	<span className="bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-2">
+										0
+									</span>
             </div>
             <div className="relative">
-              <CartIcon className="stroke-black dark:stroke-white" />
-              <span className="bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-2">
-                0
-              </span>
+
+            <CartIcon className="stroke-black dark:stroke-white" />
+            	<span className="bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-2">
+										0
+									</span>
             </div>
             {user && (
               <div className="relative">
