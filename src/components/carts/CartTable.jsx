@@ -10,7 +10,6 @@ import { useSelector } from "react-redux";
 const CartTable = () => {
 	const [totalItem, setTotalItem] = useState(1);
 	const { cartList } = useSelector((state) => state.cart);
-	console.log(cartList);
 
 	const handleQuantity = (value, id) => {
 		console.log(value, id);
