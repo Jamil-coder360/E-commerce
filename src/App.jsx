@@ -1,60 +1,63 @@
-import Roots from './components/Roots'
+import Roots from "./components/Roots";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
-import Homepage from './pages/Homepage';
-import LoginPage from './pages/LoginPage';
-import NotfoundPage from './pages/NotfoundPage';
-import ProductDetailPage from './pages/ProductDetailPage';
-import AboutPage from './pages/AboutPage';
-import SignUpPage from './pages/SingUp';
-import ProductPage from './pages/ProductPage';
-import ContactPage from './pages/ContactPage';
+import Homepage from "./pages/Homepage";
+import LoginPage from "./pages/LoginPage";
+import NotfoundPage from "./pages/NotfoundPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
+import AboutPage from "./pages/AboutPage";
+import SignUpPage from "./pages/SingUp";
+import ProductPage from "./pages/ProductPage";
+import ContactPage from "./pages/ContactPage";
+import CartPage from "./pages/CartPage";
 
 const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <Roots/>,
-		children: [
-			{
-				index: true,
-				element: <Homepage />,
-			},
-			{
-				path: "login",
-				element: <LoginPage />,
-			},
-			{
-				path: "about",
-				element: <AboutPage />,
-			},
-				{
-				path: "product",
-				element: <ProductPage />,
-			},
-				{
-				path: "contact",
-				element: <ContactPage />,
-			},
-			{
-				path: "signup",
-				element: <SignUpPage />,
-			},
-			{
-				path: "product/:id",
-				element: <ProductDetailPage />,
-			},
-			{
-				path: "*",
-				element: <NotfoundPage />,
-			},
-		],
-	},
+  {
+    path: "/",
+    element: <Roots />,
+    children: [
+      {
+        index: true,
+        element: <Homepage />,
+      },
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
+      {
+        path: "about",
+        element: <AboutPage />,
+      },
+      {
+        path: "product",
+        element: <ProductPage />,
+      },
+      {
+        path: "contact",
+        element: <ContactPage />,
+      },
+      {
+        path: "cart",
+        element: <CartPage />,
+      },
+      {
+        path: "signup",
+        element: <SignUpPage />,
+      },
+      {
+        path: "product/:id",
+        element: <ProductDetailPage />,
+      },
+      {
+        path: "*",
+        element: <NotfoundPage />,
+      },
+    ],
+  },
 ]);
 
 const App = () => {
-  return (
-    <RouterProvider router={router} />
-  )
-}
+  return <RouterProvider router={router} />;
+};
 
-export default App
+export default App;
