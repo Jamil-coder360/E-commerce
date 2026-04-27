@@ -8,12 +8,20 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // import "FlashSellingProductsData" data list for flashsale page
 import { FlashSellingProductsData } from "../data";
-import { useRef } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import Section from "./section/Section";
 import Container from "./section/Container";
+import axios from "axios";
 
 const FlashSale = ({ product }) => {
+  const [saleData , setSaleData] = useState([]);
   const swiperRef = useRef(null);
+
+  useEffect(() => {
+    axios.get('http://localhost:3000/products')
+      .then(res => setSaleData(res.data));
+  },[]);
+
   return (
     <Section>
       <Container className="pb-15 border-b border-border">
@@ -47,7 +55,7 @@ const FlashSale = ({ product }) => {
             }}
             className="mySwiper"
           >
-            {FlashSellingProductsData.map((product) => (
+            {saleData.map((product) => (
               <SwiperSlide key={product.id}>
                 <ProductCard product={product} />
               </SwiperSlide>

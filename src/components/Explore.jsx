@@ -9,13 +9,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/grid";
 // "exploreOurProductsData" data list for  explore page
-import { ExploreOurProductsData } from "../data";
-import { useRef } from "react";
+// import { ExploreOurProductsData } from "../data";
+import { useEffect, useRef } from "react";
 import { Grid } from "swiper/modules";
+import { useState } from "react";
+import axios from "axios";
 
 const Explore = () => {
   const swiperRef = useRef(null);
-
+  const [explore , setExplore] = useState([]);
+  useEffect(() => {
+    axios.get("http://localhost:3000/exploreProducts")
+      .then(res => setExplore(res.data));
+  },[]);
   return (
     <Section className="pb-42">
       <Container>
@@ -41,12 +47,12 @@ const Explore = () => {
                 rows: 2,
                 fill: "row",
               }}
-              loop={true}
               slidesPerView={4}
               spaceBetween={30}
               className="mySwiper"
+              loop={false}
             >
-              {ExploreOurProductsData.map((product) => (
+              {explore.map((product) => (
                 <SwiperSlide key={product.id}>
                   <ProductCard product={product} />
                 </SwiperSlide>

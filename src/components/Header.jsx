@@ -12,7 +12,7 @@ const Header = () => {
               Summer Sale For All Swim Suits And Free Express Delivery - OFF
               50%!
             </p>
-            <Link to="/shop">
+            <Link to="/product">
               <button className="border-b border-[#FAFAFA] dark:border-black">ShopNow</button>
             </Link>
           </div>

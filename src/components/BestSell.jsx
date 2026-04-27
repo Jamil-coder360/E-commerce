@@ -13,9 +13,17 @@ import ProductCard from "./ProductCart";
 import SectionHeader from "./section/SectionHeader";
 
 //product data
-import { BestSellingProductsData } from "../data";
+// import { BestSellingProductsData } from "../data";
+import axios from "axios";
+import { useEffect } from "react";
+import { useState } from "react";
 const BestSell = () => {
+ const [bestSale , setBestSale] =useState([]);
  
+useEffect(() => {
+  axios.get("http://localhost:3000/bestSelling")
+  .then(data => setBestSale(data.data))
+ }, [])
   return (
     <section>
       <div className="container mx-auto pt-17.5 border-t border-border">
@@ -36,7 +44,7 @@ const BestSell = () => {
             modules={[Navigation]}
           >
             {/* product mapping from BestSellingProductsData */}
-            {BestSellingProductsData.map((product) => (
+            {bestSale.map((product) => (
               <SwiperSlide key={product.id}>
                 <ProductCard product={product} />
               </SwiperSlide>

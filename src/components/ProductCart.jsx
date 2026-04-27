@@ -8,17 +8,17 @@ const ProductCard = ({ product }) => {
   return (
     <div className="overflow-hidden w-67.5">
       <div className="bg-F5F5F5 rounded-sm flex items-center justify-center p-4 relative group">
-        {product.discount && (
+        {product.discountPercentage && (
           <span className="absolute top-4 left-4 z-10 bg-secondary text-white rounded-xs inline-block py-1 px-2">
-            -{product.discount}%
+            -{product.discountPercentage}%
           </span>
         )}
 
-        <img src={product.image} alt={product.name} />
+        <img src={product.thumbnail} alt={product.name} />
 
         <div className="space-y-4 absolute top-4 right-4 z-10 flex flex-col gap-1">
           <button>
-            <WishlistIcon/>
+            <WishlistIcon />
           </button>
           <button>
             <EyeIcon />
@@ -50,7 +50,11 @@ const ProductCard = ({ product }) => {
               }
             })}
           </ul>
-          <span className="text-[#000000]/50">({product.reviews})</span>
+          <span className="text-[#000000]/50">
+            {Array.isArray(product.reviews)
+              ? `(${product.reviews.length})`
+              : `(${product.reviews})`}
+          </span>
         </div>
       </div>
     </div>
