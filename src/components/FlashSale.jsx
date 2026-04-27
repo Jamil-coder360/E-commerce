@@ -18,7 +18,7 @@ const FlashSale = ({ product }) => {
   const swiperRef = useRef(null);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/products')
+    axios.get("https://e-commerce-3xlh.onrender.com/products")
       .then(res => setSaleData(res.data));
   },[]);
 
