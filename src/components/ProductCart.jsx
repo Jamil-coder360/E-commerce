@@ -3,8 +3,16 @@ import { Link } from "react-router";
 import WishlistIcon from "./Icons/WishlistIcon";
 import StarIcon from "./Icons/StarIcon";
 import EyeIcon from "./Icons/EyeIcon";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../features/cart/cartSlice";
 
 const ProductCard = ({ product }) => {
+
+  const dispatch = useDispatch();
+
+  const handleCart = ()=>{
+    dispatch(addToCart(product))
+  }
   return (
     <div className="overflow-hidden w-67.5">
       <div className="bg-F5F5F5 rounded-sm flex items-center justify-center p-4 relative group">
@@ -25,7 +33,7 @@ const ProductCard = ({ product }) => {
           </button>
         </div>
 
-        <button className="flex justify-center text-white bg-black absolute w-full px-2 py-2 bottom-1 group-hover:bottom-0 cursor-pointer opacity-0 group-hover:opacity-100 transition-all">
+        <button onClick={handleCart} className="flex justify-center text-white bg-black absolute w-full px-2 py-2 bottom-1 group-hover:bottom-0 cursor-pointer opacity-0 group-hover:opacity-100 transition-all">
           Add To Cart
         </button>
       </div>
@@ -35,7 +43,7 @@ const ProductCard = ({ product }) => {
 
         <p className="py-2">
           <span className="text-secondary">${product.price}</span>{" "}
-          <del className="text-[#000000]/50">${product.oldPrice}</del>
+          {/* <del className="text-[#000000]/50">${product.oldPrice}</del> */}
         </p>
 
         <div className="flex justify-between items-center gap-3">

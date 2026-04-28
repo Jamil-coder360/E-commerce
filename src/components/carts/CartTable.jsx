@@ -57,7 +57,7 @@ const CartTable = () => {
 									</div>
 								</td>
 								<td className="px-5 h-[72px]">${item.price}</td>
-								<td className="px-5 h-[72px] text-center">
+								<td className="px-5 h-[72px] text-center flex items-center justify-center ">
 									<div className="border p-1 w-[72px] h-12 rounded flex items-center gap-1 justify-between">
 										<span className="mx-2">{item.quantity}</span>
 										<div className="flex flex-col">

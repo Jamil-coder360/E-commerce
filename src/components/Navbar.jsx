@@ -7,10 +7,13 @@ import ProfileDropdown from "./ProfileDropdown";
 import { AuthContext } from "../context/AuthContext";
 import { ThemeContext } from "../context/ThemeContext";
 import Logo from "./Icons/Logo";
+import { cartSlice } from "../features/cart/cartSlice";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const { theme, themeChange } = useContext(ThemeContext);
   const { user } = useContext(AuthContext);
+  const {cartList} = useSelector((state)=>state.cart);
   console.log(user);
   // Navber data list
   const menuItems = [
@@ -67,7 +70,7 @@ const Navbar = () => {
 
             <CartIcon className="stroke-black dark:stroke-white" />
             	<span className="bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-2">
-										0
+										{cartList?.length}
 									</span>
             </Link>
             {user && (
