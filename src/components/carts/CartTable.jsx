@@ -15,11 +15,19 @@ const CartTable = () => {
 		console.log(value, id);
 	};
 	const handleIncrement = (id) => {
-		const totalCartItem = cartList.map((item) => item.id === id);
-		console.log(totalCartItem);
+		if (totalItem <10) {
+			setTotalItem(totalItem + 1) ;
+		}
+		// const totalCartItem = cartList.map((item) => item.id === id);
+		console.log(totalItem);
 	};
 	const handleDecrement = () => {
-		setTotalItem(totalItem - 1);
+		if(totalItem > 0){
+			setTotalItem(totalItem - 1 );
+		}
+		
+
+		console.log(totalItem);
 	};
 
 	return (
@@ -59,17 +67,17 @@ const CartTable = () => {
 								<td className="px-5 h-[72px]">${item.price}</td>
 								<td className="px-5 h-[72px] text-center flex items-center justify-center ">
 									<div className="border p-1 w-[72px] h-12 rounded flex items-center gap-1 justify-between">
-										<span className="mx-2">{item.quantity}</span>
+										<span className="mx-2">{totalItem}</span>
 										<div className="flex flex-col">
 											<button
 												className="cursor-pointer"
-												onClick={() => handleIncrement(item.id)}
+												onClick={() => handleIncrement(item.quantity && item.id )}
 											>
 												<ChevronUp size={16} />
 											</button>
 											<button
 												className="cursor-pointer"
-												onClick={() => handleDecrement(item.quantity, item.id)}
+												onClick={() => handleDecrement(item.quantity && item.id)}
 											>
 												<ChevronDown size={16} />
 											</button>
@@ -77,7 +85,7 @@ const CartTable = () => {
 									</div>
 								</td>
 								<td className="px-5 h-[72px] text-right">
-									{item.price * item.quantity}
+									{item.price * (totalItem)}
 								</td>
 							</tr>
 						))}
