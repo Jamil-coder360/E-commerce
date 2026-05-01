@@ -8,7 +8,7 @@ const Button = ({Tagname="button",  children, onClick, variant = "red",className
   const variantClasses = {
     red: "bg-[#DB4444] text-white hover:bg-[#DB4444] hover:bg-opacity-80",
     black: "bg-[#000000] text-white hover:bg-[#000000] hover:bg-opacity-80",
-    white:"bg-white text-black "
+    white:"bg-white text-black  border border-[#000000]/40 rounded"
   };
 
 // button body
