@@ -10,6 +10,7 @@ import SignUpPage from "./pages/SingUp";
 import ProductPage from "./pages/ProductPage";
 import ContactPage from "./pages/ContactPage";
 import CartPage from "./pages/CartPage";
+import Account from "./components/account/Account";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "product/:id",
         element: <ProductDetailPage />,
+      },
+      {
+        path:"account",
+        element: <Account />
       },
       {
         path: "*",

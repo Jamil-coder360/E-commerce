@@ -3,12 +3,12 @@ import { Link } from "react-router";
 import WishlistIcon from "./Icons/WishlistIcon";
 import CartIcon from "./Icons/CartIcon";
 import { SunIcon, User, MoonIcon } from "lucide-react";
-import ProfileDropdown from "./ProfileDropdown";
 import { AuthContext } from "../context/AuthContext";
 import { ThemeContext } from "../context/ThemeContext";
 import Logo from "./Icons/Logo";
 import { cartSlice } from "../features/cart/cartSlice";
 import { useSelector } from "react-redux";
+import ProfileDropdown from "./account/ProfileDropdown";
 
 const Navbar = () => {
   const { theme, themeChange } = useContext(ThemeContext);
