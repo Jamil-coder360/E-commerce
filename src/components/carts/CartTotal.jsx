@@ -3,8 +3,17 @@ import Section from "../section/Section";
 import Container from "../section/Container";
 import { Link } from "react-router";
 import Button from "../Button";
+import { useSelector } from "react-redux";
 
 const CartTotal = () => {
+const { cartList } = useSelector((state) => state.cart);
+ 
+const subtotal = cartList.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0)
+
+let shipping=120;
+const total = shipping + subtotal;
+
+
 	return (
 		<Section className="pb-35">
 			<Container>
@@ -27,15 +36,15 @@ const CartTotal = () => {
 							<div className="pt-4 text-black text-[16px]">
 								<div className="flex justify-between border-b border-gray-500 py-4">
 									<span>Subtotal</span>
-									<span>$1750</span>
+									<span>{subtotal.toLocaleString()}</span>
 								</div>
 								<div className="flex justify-between border-b border-gray-500 py-4">
 									<span>Shipping</span>
-									<span>Free</span>
+									<span>{shipping.toLocaleString() || "free"}</span>
 								</div>
 								<div className="flex justify-between py-4">
 									<span>Total</span>
-									<span>$1750</span>
+									<span>${total.toLocaleString()}</span>
 								</div>
 								<div className="flex justify-center pb-10">
 									<Button
