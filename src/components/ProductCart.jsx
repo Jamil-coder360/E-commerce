@@ -33,9 +33,12 @@ const ProductCard = ({ product }) => {
           <button>
             <WishlistIcon />
           </button>
+          <Link to={"product/:id"}> 
+          
           <button>
             <EyeIcon />
           </button>
+          </Link>
         </div>
 
         <button onClick={handleCart} className="flex justify-center text-white bg-black absolute w-full px-2 py-2 bottom-1 group-hover:bottom-0 cursor-pointer opacity-0 group-hover:opacity-100 transition-all">
