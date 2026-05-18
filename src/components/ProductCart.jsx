@@ -5,11 +5,16 @@ import StarIcon from "./Icons/StarIcon";
 import EyeIcon from "./Icons/EyeIcon";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../features/cart/cartSlice";
+import {addTowish} from "../features/wishlist/wishlistSlice"
+import { useState } from "react";
 
 const ProductCard = ({ product }) => {
+  const [active,setActive] = useState();
 
   const dispatch = useDispatch();
   const {cartList} = useSelector((state)=>state.cart);
+  const { wishList } = useSelector((state) => state.wishlist);
+
 
   const isCartItem = cartList.find((item)=> item.id === product.id)
   const handleCart = ()=>{
@@ -18,6 +23,25 @@ const ProductCard = ({ product }) => {
       dispatch(addToCart(product))
     }
   }
+
+	const checkItemAddedInWishlist = (id) =>
+		wishList.find((item) => item.id == id);
+
+	const handleAddToWishlist = (id) => {
+		const isWishlistItem = checkItemAddedInWishlist(id);
+		if (!isWishlistItem) {
+			dispatch(addTowish(product));
+		}
+		console.log(isWishlistItem);
+	};
+//   const isWishlistItem = wishList.find((item) => item.id === product.id);
+//   const handleWishlistToggle = () => {
+//   if (isWishlistItem) {
+//     dispatch(removeFromWish(product.id));
+//   } else {
+//     dispatch(addTowish(product));
+//   }
+// };
   return (
     <div className="overflow-hidden w-67.5">
       <div className="bg-F5F5F5 rounded-sm flex items-center justify-center p-4 relative group">
@@ -30,9 +54,29 @@ const ProductCard = ({ product }) => {
         <img src={product.thumbnail} alt={product.name} />
 
         <div className="space-y-4 absolute top-4 right-4 z-10 flex flex-col gap-1">
-          <button>
-            <WishlistIcon />
-          </button>
+
+          
+       <button
+  onClick={() => {
+    handleAddToWishlist(product.id);
+    setActive((prev) => !prev);
+  }}
+>
+  <WishlistIcon
+    className="stroke-black"
+    stroke={active ? "red" : "black"}
+    fill={active ? "red" : "none"}
+  />
+</button>
+{/* <button onClick={handleWishlistToggle}>
+  <WishlistIcon
+    className="stroke-black"
+    stroke={isWishlistItem ? "red" : "black"}
+    fill={isWishlistItem ? "red" : "none"}
+  />
+</button> */}
+
+            	
           <Link to={"product/:id"}> 
           
           <button>

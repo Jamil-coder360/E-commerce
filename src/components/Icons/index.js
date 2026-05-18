@@ -13,5 +13,6 @@ import { ShopIcon } from "./ShopIcon";
 import { SaleIcon } from "./SaleIcon";
 import { MoneybagIcon } from "./MoneybagIcon";
 import { ShoppingbagIcon } from "./ShoppingbagIcon";
+import {DeleteIcon} from "./DeleteIcon"
 
-export {  SecureIcon, DeliveryIcon, CustomerserviceIcon, ShopIcon, SaleIcon, MoneybagIcon, ShoppingbagIcon };
+export {  SecureIcon, DeliveryIcon, CustomerserviceIcon, ShopIcon, SaleIcon, MoneybagIcon, ShoppingbagIcon,DeleteIcon };

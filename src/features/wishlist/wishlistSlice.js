@@ -28,10 +28,16 @@ export const wishSlice = createSlice({
 				localStorage.setItem("wishList", JSON.stringify(state.wishList));
 			}
 		},
+			deleteWishlistItem: (state, action) => {
+			state.wishList = state.wishList.filter(
+				(item) => item.id !== action.payload,
+			);
+			localStorage.setItem("wishList", JSON.stringify([...state.wishList]));
+		},
 	},
 });
 
 // Action creators are generated for each case reducer function
-export const { addTowish, updateQuantity } = wishSlice.actions;
+export const { addTowish, updateQuantity ,deleteWishlistItem } = wishSlice.actions;
 
 export default wishSlice.reducer;

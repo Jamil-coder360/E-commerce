@@ -13,8 +13,8 @@ import ProfileDropdown from "./account/ProfileDropdown";
 const Navbar = () => {
   const { theme, themeChange } = useContext(ThemeContext);
   const { user } = useContext(AuthContext);
-  const {cartList} = useSelector((state)=>state.cart);
-  const {wishList} = useSelector((state)=>state.cart);
+  const { cartList } = useSelector((state) => state.cart);
+  const { wishList } = useSelector((state) => state.wishlist);
   const [active, setActive] = useState(false);
 
   console.log(user);
@@ -62,20 +62,23 @@ const Navbar = () => {
               type="text"
               placeholder="Search..."
             />
-            <Link to={"wish"} className="relative"    onClick={() => setActive((prev) => !prev)} >
+            {/* icon color change */}
+            {/* <Link to={"wish"} className="relative"    onClick={() => setActive((prev) => !prev)} >
 
             <WishlistIcon className="stroke-black dark:stroke-white " stroke={active ? "black" : "red"}
-        fill={active ? "red" : "none"} />
-            	<span className="bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-2">
-									{wishList?.length}
-									</span>
+        fill={active ? "red" : "none"} /> */}
+        
+            <Link to={"wish"} className="relative">
+              <WishlistIcon />
+              <span className="bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-2">
+                {wishList?.length}
+              </span>
             </Link>
-             <Link to={"cart"} className="relative">
-
-            <CartIcon className="stroke-black dark:stroke-white" />
-            	<span className="bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-2">
-										{cartList?.length}
-									</span>
+            <Link to={"cart"} className="relative">
+              <CartIcon className="stroke-black dark:stroke-white" />
+              <span className="bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-2">
+                {cartList?.length}
+              </span>
             </Link>
             {user && (
               <div className="relative">

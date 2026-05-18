@@ -1,0 +1,57 @@
+import { Link } from "react-router";
+import Button from "../components/Button";
+import Container from "../components/section/Container";
+import ProductCard from "../components/ProductCart";
+import Section from "../components/section/Section";
+import SectionHeader from "../components/section/SectionHeader";
+// import BestSellingProducts from "../components/BestSellingProducts";
+import WishlistProductCard from "../components/WishlistProductCard";
+
+import { BestSellingProductsData, ExploreOurProductsData } from "../data";
+// import SecondaryButton from "../components/SecondaryButton";
+import { useSelector } from "react-redux";
+
+const WishlistPage = () => {
+	const { wishList } = useSelector((state) => state.wishlist);
+	return (
+		<Section className={"pt-20 pb-35 bg-white"}>
+			<Container>
+				<div className="grid gap-6">
+					<div className="flex justify-between gap-4 items-center">
+						<p>Wishlist (4)</p>
+						<Button>Move All To Bag</Button>
+					</div>
+
+					<div className="grid grid-cols-4 gap-6">
+						{wishList.map((product) => (
+							<div key={product.id}>
+								<WishlistProductCard product={product} />
+							</div>
+						))}
+					</div>
+
+					<div className="space-y-6 pt-20">
+						<div className="flex justify-between items-end gap-6">
+							<p className="flex items-center gap-2">
+								<span className="h-10 w-5 bg-my_secondary rounded-sm inline-block"></span>
+								<span className="text-black font-semibold">Just For You</span>
+							</p>
+							<Button TagName={Link} to="/shop">
+								View All
+							</Button>
+						</div>
+						<div className="grid grid-cols-4 gap-6">
+							{BestSellingProductsData.map((product) => (
+								<div key={product.id}>
+									<ProductCard product={product} />
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			</Container>
+		</Section>
+	);
+};
+
+export default WishlistPage;
