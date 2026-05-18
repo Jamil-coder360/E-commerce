@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router";
 import WishlistIcon from "./Icons/WishlistIcon";
 import CartIcon from "./Icons/CartIcon";
@@ -14,6 +14,9 @@ const Navbar = () => {
   const { theme, themeChange } = useContext(ThemeContext);
   const { user } = useContext(AuthContext);
   const {cartList} = useSelector((state)=>state.cart);
+  const {wishList} = useSelector((state)=>state.cart);
+  const [active, setActive] = useState(false);
+
   console.log(user);
   // Navber data list
   const menuItems = [
@@ -59,11 +62,12 @@ const Navbar = () => {
               type="text"
               placeholder="Search..."
             />
-            <Link to={""} className="relative">
+            <Link to={"wish"} className="relative"    onClick={() => setActive((prev) => !prev)} >
 
-            <WishlistIcon className="stroke-black dark:stroke-white " />
+            <WishlistIcon className="stroke-black dark:stroke-white " stroke={active ? "black" : "red"}
+        fill={active ? "red" : "none"} />
             	<span className="bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center absolute -top-2 -right-2">
-										0
+									{wishList?.length}
 									</span>
             </Link>
              <Link to={"cart"} className="relative">
