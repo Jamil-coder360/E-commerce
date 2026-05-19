@@ -5,43 +5,36 @@ import StarIcon from "./Icons/StarIcon";
 import EyeIcon from "./Icons/EyeIcon";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../features/cart/cartSlice";
-import {addTowish} from "../features/wishlist/wishlistSlice"
+import { addTowish } from "../features/wishlist/wishlistSlice";
 import { useState } from "react";
 
 const ProductCard = ({ product }) => {
-  const [active,setActive] = useState();
+  const [active, setActive] = useState();
 
   const dispatch = useDispatch();
-  const {cartList} = useSelector((state)=>state.cart);
+  const { cartList } = useSelector((state) => state.cart);
   const { wishList } = useSelector((state) => state.wishlist);
 
-
-  const isCartItem = cartList.find((item)=> item.id === product.id)
-  const handleCart = ()=>{
+  const isCartItem = cartList.find((item) => item.id === product.id);
+  const handleCart = () => {
     if (!isCartItem) {
-      
-      dispatch(addToCart(product))
+      dispatch(addToCart(product));
     }
-  }
+  };
 
-	const checkItemAddedInWishlist = (id) =>
-		wishList.find((item) => item.id == id);
+  const checkItemAddedInWishlist = (id) =>
+    wishList.find((item) => item.id == id);
 
-	const handleAddToWishlist = (id) => {
-		const isWishlistItem = checkItemAddedInWishlist(id);
-		if (!isWishlistItem) {
-			dispatch(addTowish(product));
-		}
-		console.log(isWishlistItem);
-	};
-//   const isWishlistItem = wishList.find((item) => item.id === product.id);
-//   const handleWishlistToggle = () => {
-//   if (isWishlistItem) {
-//     dispatch(removeFromWish(product.id));
-//   } else {
-//     dispatch(addTowish(product));
-//   }
-// };
+  const handleAddToWishlist = (id) => {
+    const isWishlistItem = checkItemAddedInWishlist(id);
+    if (isWishlistItem) {
+      dispatch(removeFromWish(product.id));
+    } else {
+      dispatch(addTowish(product));
+    }
+    console.log(isWishlistItem);
+  };
+
   return (
     <div className="overflow-hidden w-67.5">
       <div className="bg-F5F5F5 rounded-sm flex items-center justify-center p-4 relative group">
@@ -51,42 +44,34 @@ const ProductCard = ({ product }) => {
           </span>
         )}
 
-        <img src={product.thumbnail} alt={product.name} />
+        <img src={product.thumbnail || product.image} alt={product.name} />
 
         <div className="space-y-4 absolute top-4 right-4 z-10 flex flex-col gap-1">
-
-          
-       <button
-  onClick={() => {
-    handleAddToWishlist(product.id);
-    setActive((prev) => !prev);
-  }}
->
-  <WishlistIcon
-    className="stroke-black"
-    stroke={active ? "red" : "black"}
-    fill={active ? "red" : "none"}
-  />
-</button>
-{/* <button onClick={handleWishlistToggle}>
-  <WishlistIcon
-    className="stroke-black"
-    stroke={isWishlistItem ? "red" : "black"}
-    fill={isWishlistItem ? "red" : "none"}
-  />
-</button> */}
-
-            	
-          <Link to={"product/:id"}> 
-          
-          <button>
-            <EyeIcon />
+          <button
+            onClick={() => {
+              handleAddToWishlist(product.id);
+              // setActive((prev) => !prev);
+            }}
+          >
+            <WishlistIcon
+              className="stroke-black"
+              stroke={checkItemAddedInWishlist ? "red" : "black"}
+              fill={checkItemAddedInWishlist ? "red" : "none"}
+            />
           </button>
+
+          <Link to={"product/:id"}>
+            <button>
+              <EyeIcon />
+            </button>
           </Link>
         </div>
 
-        <button onClick={handleCart} className="flex justify-center text-white bg-black absolute w-full px-2 py-2 bottom-1 group-hover:bottom-0 cursor-pointer opacity-0 group-hover:opacity-100 transition-all">
-{isCartItem ? "AllReady In Cart" : "Add To Cart"}
+        <button
+          onClick={handleCart}
+          className="flex justify-center text-white bg-black absolute w-full px-2 py-2 bottom-1 group-hover:bottom-0 cursor-pointer opacity-0 group-hover:opacity-100 transition-all"
+        >
+          {isCartItem ? "AllReady In Cart" : "Add To Cart"}
         </button>
       </div>
 
