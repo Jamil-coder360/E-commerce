@@ -5,7 +5,7 @@ import StarIcon from "./Icons/StarIcon";
 import EyeIcon from "./Icons/EyeIcon";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../features/cart/cartSlice";
-import { addTowish } from "../features/wishlist/wishlistSlice";
+import { addTowish,deleteWishlistItem } from "../features/wishlist/wishlistSlice";
 import { useState } from "react";
 
 const ProductCard = ({ product }) => {
@@ -23,12 +23,13 @@ const ProductCard = ({ product }) => {
   };
 
   const checkItemAddedInWishlist = (id) =>
-    wishList.find((item) => item.id == id);
+    wishList.find((item) => item.id === id);
+
+  const isWishlistItem = checkItemAddedInWishlist(product.id);
 
   const handleAddToWishlist = (id) => {
-    const isWishlistItem = checkItemAddedInWishlist(id);
     if (isWishlistItem) {
-      dispatch(removeFromWish(product.id));
+      dispatch(deleteWishlistItem(product.id));
     } else {
       dispatch(addTowish(product));
     }
@@ -49,14 +50,14 @@ const ProductCard = ({ product }) => {
         <div className="space-y-4 absolute top-4 right-4 z-10 flex flex-col gap-1">
           <button
             onClick={() => {
-              handleAddToWishlist(product.id);
+              handleAddToWishlist(product.id)
               // setActive((prev) => !prev);
             }}
           >
             <WishlistIcon
               className="stroke-black"
-              stroke={checkItemAddedInWishlist ? "red" : "black"}
-              fill={checkItemAddedInWishlist ? "red" : "none"}
+              stroke={isWishlistItem ? "red" : "black"}
+              fill={isWishlistItem ? "red" : "none"}
             />
           </button>
 
