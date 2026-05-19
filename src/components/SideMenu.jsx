@@ -29,13 +29,13 @@ const SideMenu = () => {
 
   return (
     <nav className="max-w-55 bg-white dark:bg-black pr-4 border-r-[.5px] dark:border-white/30 border-[#000000]/30">
-      <ul className="flex flex-col gap-4  relative">
+      <ul className="flex flex-col gap-4">
         {menuItems.map((item) => (
           <li
             key={item.id}
             onMouseEnter={() => setActiveDropdown(item.id)}
             onMouseLeave={() => setActiveDropdown(null)}
-            className=" relative flex justify-between items-center gap6 font-normal text-base text-[#000000] dark:text-white hover:text-gray-900"
+            className=" relative group flex justify-between items-center gap-6 font-normal text-base text-[#000000] dark:text-white hover:text-gray-900"
           >
             <Link to={item.link}>{item.name}</Link>
             {item.submenu && item.submenu.length > 0 && (
@@ -44,13 +44,13 @@ const SideMenu = () => {
 
             {item.submenu && (
               <div
-                className={`absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-40`}
+                className={`absolute left-1/2 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-40`}
               >
-                   <div className="bg-white rounded-md shadow-lg border border-gray-200 min-w-50 py-2">
+                   <div className="bg-white rounded-md shadow-lg border border-gray-200 min-w-50 py-2 border-b-2 border-b-red-500">
                 {item.submenu.map((subitem) => (
                   <li
                     key={subitem.id}
-                    className=" flex justify-between items-center gap6 font-normal text-base text-[#000000] dark:text-white hover:text-gray-900"
+                    className=" pl-2 flex justify-between items-center gap6 font-normal text-base text-[#000000] dark:text-white hover:text-gray-900"
                   >
                     <Link to={subitem.link}>{subitem.name}</Link>
                 
