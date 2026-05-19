@@ -12,6 +12,7 @@ import ContactPage from "./pages/ContactPage";
 import CartPage from "./pages/CartPage";
 import Account from "./components/account/Account";
 import WishlistPage from "./pages/WishlistPage";
+import CheckoutPage from "./pages/CheckOutPage";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <ContactPage />,
+      },
+      {
+        path: "checkout",
+        element: <CheckoutPage />,
       },
       {
         path: "cart",

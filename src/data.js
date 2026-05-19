@@ -67,7 +67,7 @@ import BS_image_4 from "./assets/best-sale-4.png";
 
 export const BestSellingProductsData = [
   {
-    "id": 1,
+    "id": "e1",
     "image": BS_image_1,
     "discount": 28,
     "title": "The north coat",
@@ -77,7 +77,7 @@ export const BestSellingProductsData = [
     "reviews": 65
   },
   {
-    "id": 2,
+    "id":"e2",
     "image": BS_image_2,
     "discount": 17,
     "title": "Gucci duffle bag",
@@ -87,7 +87,7 @@ export const BestSellingProductsData = [
     "reviews": 65
   },
   {
-    "id": 3,
+    "id":" e3",
     "image": BS_image_3,
     "discount": 6,
     "title": "RGB liquid CPU Cooler",
@@ -97,7 +97,7 @@ export const BestSellingProductsData = [
     "reviews": 65
   },
   {
-    "id": 4,
+    "id": "e4",
     "image": BS_image_4,
     "discount": 10 ,
     "title": "Small BookSelf",
