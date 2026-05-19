@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "p1",
       "thumbnail": "/images/flash-sale-1.png",
       "discountPercentage": 40,
       "title": "HAVIT HV-G92 Gamepad",
@@ -11,7 +11,7 @@
       "reviews": 88
     },
     {
-      "id": 2,
+      "id": "p2",
       "thumbnail": "/images/flash-sale-2.png",
       "discountPercentage": 35,
       "title": "AK-900 Wired Keyboard",
@@ -21,7 +21,7 @@
       "reviews": 75
     },
     {
-      "id": 3,
+      "id": "p3",
       "thumbnail": "/images/flash-sale-3.png",
       "discountPercentage": 30,
       "title": "IPS LCD Gaming Monitor",
@@ -31,7 +31,7 @@
       "reviews": 99
     },
     {
-      "id": 4,
+      "id": "p4",
       "thumbnail": "/images/flash-sale-4.png",
       "discountPercentage": 25,
       "title": "S-Series Comfort Chair",
@@ -41,7 +41,7 @@
       "reviews": 99
     },
     {
-      "id": 4,
+      "id": "p5",
       "thumbnail": "/images/flash-sale-4.png",
       "discountPercentage": 25,
       "title": "S-Series Comfort Chair",
@@ -53,7 +53,7 @@
   ],
   "bestSelling": [
     {
-      "id": 1,
+      "id": "b1",
       "thumbnail": "/images/best-sale-1.png",
       "discountPercentage": 28,
       "title": "The north coat",
@@ -63,7 +63,7 @@
       "reviews": 65
     },
     {
-      "id": 2,
+      "id": "b2",
       "thumbnail": "/images/best-sale-2.png",
       "discountPercentage": 17,
       "title": "Gucci duffle bag",
@@ -73,7 +73,7 @@
       "reviews": 65
     },
     {
-      "id": 3,
+      "id": "b3",
       "thumbnail": "/images/best-sale-3.png",
       "discountPercentage": 6,
       "title": "RGB liquid CPU Cooler",
@@ -83,7 +83,7 @@
       "reviews": 65
     },
     {
-      "id": 4,
+      "id": "b4",
       "thumbnail": "/images/best-sale-4.png",
       "discountPercentage": 10,
       "title": "Small BookSelf",
@@ -96,7 +96,7 @@
   
   "exploreProducts": [
     {
-      "id": 1,
+      "id": "o1",
       "thumbnail": "/images/ourProducts-1.png",
       "discountPercentage": 40,
       "title": "Breed Dry Dog Food",
@@ -106,7 +106,7 @@
       "reviews": 25
     },
     {
-      "id": 2,
+      "id": "o2",
       "thumbnail": "/images/ourProducts-2.png",
       "discountPercentage": 35,
       "title": "CANON EOS DSLR Camera",
@@ -116,7 +116,7 @@
       "reviews": 95
     },
     {
-      "id": 3,
+      "id": "o3",
       "thumbnail": "/images/ourProducts-3.png",
       "discountPercentage": 30,
       "title": "ASUS FHD Gaming Laptop",
@@ -126,7 +126,7 @@
       "reviews": 325
     },
     {
-      "id": 4,
+      "id": "o4",
       "thumbnail": "/images/ourProducts-1.png",
       "discountPercentage": 25,
       "title": "S-Series Comfort Chair",
@@ -136,7 +136,7 @@
       "reviews": 99
     },
     {
-      "id": 5,
+      "id": "o5",
       "thumbnail": "/images/ourProducts-1.png",
       "discountPercentage": 25,
       "title": "S-Series Comfort Chair",
@@ -146,7 +146,7 @@
       "reviews": 99
     },
     {
-      "id": 6,
+      "id": "o6",
       "thumbnail": "/images/ourProducts-1.png",
       "discountPercentage": 25,
       "title": "S-Series Comfort Chair",
@@ -156,7 +156,7 @@
       "reviews": 99
     },
     {
-      "id": 7,
+      "id": "o7",
       "thumbnail": "/images/ourProducts-1.png",
       "discountPercentage": 25,
       "title": "S-Series Comfort Chair",
@@ -166,7 +166,7 @@
       "reviews": 99
     },
     {
-      "id": 8,
+      "id": "o8",
       "thumbnail": "/images/ourProducts-1.png",
       "discountPercentage": 25,
       "title": "S-Series Comfort Chair",
@@ -176,7 +176,7 @@
       "reviews": 99
     },
     {
-      "id": 9,
+      "id": "o9",
       "thumbnail": "/images/ourProducts-1.png",
       "discountPercentage": 25,
       "title": "S-Series Comfort Chair",
@@ -186,7 +186,7 @@
       "reviews": 99
     },
     {
-      "id": 10,
+      "id": "o10",
       "thumbnail": "/images/ourProducts-1.png",
       "discountPercentage": 25,
       "title": "S-Series Comfort Chair",

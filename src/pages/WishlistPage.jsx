@@ -18,7 +18,7 @@ const WishlistPage = () => {
 			<Container>
 				<div className="grid gap-6">
 					<div className="flex justify-between gap-4 items-center">
-						<p>Wishlist (4)</p>
+						<p>Wishlist ({wishList.length})</p>
 						<Button>Move All To Bag</Button>
 					</div>
 
