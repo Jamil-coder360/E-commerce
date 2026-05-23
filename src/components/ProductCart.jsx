@@ -77,7 +77,7 @@ const ProductCard = ({ product }) => {
       </div>
 
       <div className="pt-4">
-        <h4 className="text-black font-medium">{product.name}</h4>
+        <h4 className="text-black font-medium">{product.title}</h4>
 
         <p className="py-2">
           <span className="text-secondary">${product.price}</span>{" "}

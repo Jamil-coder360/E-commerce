@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router";
 import WishlistIcon from "./Icons/WishlistIcon";
 import CartIcon from "./Icons/CartIcon";
@@ -9,6 +9,8 @@ import Logo from "./Icons/Logo";
 import { cartSlice } from "../features/cart/cartSlice";
 import { useSelector } from "react-redux";
 import ProfileDropdown from "./account/ProfileDropdown";
+import SearchBox from "./SearchBox";
+import axios from "axios";
 
 const Navbar = () => {
   const { theme, themeChange } = useContext(ThemeContext);
@@ -16,8 +18,26 @@ const Navbar = () => {
   const { cartList } = useSelector((state) => state.cart);
   const { wishList } = useSelector((state) => state.wishlist);
   const [active, setActive] = useState(false);
-
+  const [searchText, setSearchText] = useState("");
+  const [searchBoxOpen, setSearchBoxOpen] = useState(false);
+  const [products, setProducts] = useState([]);
+  
+  useEffect(() => {
+    axios
+    .get("https://dummyjson.com/products/categories")
+    .then((data) => setMenus(data.data));
+  }, []);
+  
+  useEffect(() => {
+    axios.get("https://dummyjson.com/products").then((data) => {
+      setProducts(data.data.products);
+		});
+	}, []);
   console.log(user);
+
+  const handleSearch = (e) => {
+  setSearchText(e.target.value);
+};
   // Navber data list
   const menuItems = [
     { id: 1, name: "Home", path: "/" },
@@ -30,6 +50,15 @@ const Navbar = () => {
     { id: 4, name: "signup", path: "/signup" },
     // { id: 4, name: "login", path: "/login" },
   ];
+
+
+  	const searchResult = products.filter((element) => {
+		if (searchText.length == 0) {
+			return;
+		}
+
+		return element.title.toLowerCase().includes(searchText.toLowerCase());
+	});
 
   return (
     <section className="bg-white dark:bg-black pt-11.75 pb-6.75 border-b dark:border-slate-100 border-[#000000]">
@@ -56,12 +85,22 @@ const Navbar = () => {
               </ul>
             </nav>
           </div>
-          <div className="text-gray-950 flex items-center gap-5">
+          <div className=" relative text-gray-950 flex items-center gap-5">
             <input
-              className="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className=" w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
               type="text"
+              onChange={handleSearch}
+              onFocus={() => setSearchBoxOpen(true)}
+              onBlur={() =>setSearchBoxOpen(false)}
               placeholder="Search..."
             />
+            {searchText.length > 0 && searchBoxOpen && (
+              <div className=" absolute top-full right-0 mt-2 z-9999">
+                <SearchBox  searchProduct={searchResult} />
+              </div>
+            )}
+          </div>
+            <div className=" text-gray-950 flex items-center gap-5">
             {/* icon color change */}
             {/* <Link to={"wish"} className="relative"    onClick={() => setActive((prev) => !prev)} >
 
