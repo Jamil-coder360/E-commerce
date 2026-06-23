@@ -28,7 +28,7 @@ const SideMenu = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   return (
-    <nav className="max-w-full lg:max-w-55 bg-white dark:bg-black pr-4 border-r-[.5px] dark:border-white/30 lg:border-[#000000]/30">
+    <nav className="max-w-full lg:max-w-55 bg-white dark:bg-black pr-4 border-r-0 lg:border-r-[.5px] lg:dark:border-white/30 lg:border-[#000000]/30">
       <ul className="flex flex-wrap lg:flex-nowrap lg:flex-col gap-4">
         {menuItems.map((item) => (
           <li

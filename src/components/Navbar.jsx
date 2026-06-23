@@ -62,7 +62,7 @@ const Navbar = () => {
 
   return (
     <section className="bg-white dark:bg-black pt-11.75 pb-6.75 border-b dark:border-slate-100 border-[#000000]">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-5 lg:px-0">
         <div className="flex flex-wrap lg:flex-nowrap items-center justify-between">
           <div>
             <Link to="/">
