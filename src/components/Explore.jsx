@@ -39,10 +39,10 @@ const Explore = () => {
   const groupedProducts = chunkArray(explore, 2);
 
   return (
-    <Section className="pb-42">
+    <Section className=" pb-8 lg:pb-42 px-5 lg:px-0">
       <Container>
         <div>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap lg:flex-nowrap items-center justify-between">
             <SectionHeader
               title="Explore Our Products"
               subtitle="Our Products"
@@ -68,6 +68,24 @@ const Explore = () => {
               spaceBetween={30}
               className="mySwiper"
               loop={true}
+                               breakpoints={{
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 25,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  }}
             >
               {groupedProducts.map((group, index) => (
                 <SwiperSlide key={index}>

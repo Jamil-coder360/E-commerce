@@ -6,8 +6,8 @@ const Header = () => {
   return (
     <section className=" dark:bg-slate-100  bg-black dark:text-black text-white">
       <div className="container mx-auto">
-        <div className="flex items-center justify-between py-3">
-          <div className="flex items-center justify-between gap-10 text-center">
+        <div className="flex sm:flex-wrap    items-center justify-between py-3">
+          <div className="flex sm:flex-wrap flex-nowrap items-center justify-between gap-10 text-center">
             <p className="text-center">
               Summer Sale For All Swim Suits And Free Express Delivery - OFF
               50%!

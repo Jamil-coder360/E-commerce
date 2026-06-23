@@ -10,17 +10,17 @@ import Arrive_4 from "../assets/arive-4.png";
 const Arrival = () => {
   return (
     <Section>
-      <Container>
+      <Container className={"px-5 lg:px-0"}>
         <div>
-          <div className="flex items-center justify-center pb-15">
+          <div className="flex  lg:items-center lg:justify-center pb-5 lg:pb-15">
             <SectionHeader title="New Arrival" subtitle="Featured" />
           </div>
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-6">
             {/* left side */}
             <ArrivalCard bgImage={Arrive_1} />
 
             {/* right side */}
-            <div className="grid grid-rows-2 gap-6">
+            <div className="grid grid-rows-1 lg:grid-rows-2 gap-2 lg:gap-6">
               <ArrivalCard
                 bgImage={Arrive_2}
                 heading="heading"
@@ -28,7 +28,7 @@ const Arrival = () => {
               />
 
               {/* Bottom 2 cards */}
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-2 lg:gap-6">
                 <ArrivalCard
                   bgImage={Arrive_3}
                   heading="Speakers"

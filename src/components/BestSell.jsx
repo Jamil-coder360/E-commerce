@@ -26,10 +26,10 @@ useEffect(() => {
  }, [])
   return (
     <section>
-      <div className="container mx-auto pt-17.5 border-t border-border">
+      <div className="container mx-auto pt-5  lg:pt-17.5 px-5 lg:px-0 border-t border-border">
         {" "}
         {/*use padding here for border bottom other wise it will be une on section */}
-        <div className="flex items-center justify-between pb-15">
+        <div className="flex flex-wrap lg:flex-nowrap items-center justify-between pb-15">
           {/* use a section header for best sell */}
 
           <SectionHeader title="Best Selling Products" subtitle="This Month" />
@@ -42,6 +42,24 @@ useEffect(() => {
             spaceBetween={20}
             navigation={true}
             modules={[Navigation]}
+                  breakpoints={{
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 25,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  }}
           >
             {/* product mapping from BestSellingProductsData */}
             {bestSale.map((product) => (

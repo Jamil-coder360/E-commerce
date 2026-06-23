@@ -24,10 +24,10 @@ const FlashSale = ({ product }) => {
 
   return (
     <Section>
-      <Container className="pb-15 border-b border-border">
-        <div className="flex items-center justify-between mb-10">
+      <Container className="pb-5 lg:pb-15 border-b border-border px-5 lg:px-0">
+        <div className="flex items-start lg:items-center flex-wrap lg:flex-nowrap justify-between mb-10">
          
-          <div className="flex items-center justify-center gap-21.75 ">
+          <div className="flex items-start lg:items-center  flex-wrap lg:flex-nowrap justify-start lg:justify-center gap-4 lg:gap-21.75 ">
             <SectionHeader title="Flash Sales" subtitle="Today’s" />
             <Timmer />
           </div>
@@ -54,6 +54,24 @@ const FlashSale = ({ product }) => {
               dynamicBullets: true,
             }}
             className="mySwiper"
+           breakpoints={{
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 25,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  }}
           >
             {saleData.map((product) => (
               <SwiperSlide key={product.id}>

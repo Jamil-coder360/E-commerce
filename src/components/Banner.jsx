@@ -9,11 +9,11 @@ import { Pagination } from "swiper/modules";
 import { Link } from "react-router";
 const Banner = () => {
   return (
-    <section className=" pt-10 pb-41.25">
+    <section className=" lg:pt-10 py-8 lg:pb-41.25 px-5 lg:px-0">
       <div className="container mx-auto">
-        <div className="grid grid-cols-[300px_auto]">
+        <div className="grid grid-cols-1 lg:grid-cols-[300px_auto]">
           <SideMenu />
-          <div className="w-[892px] dark:border-slate-50 dark:border-1 border-0">
+          <div className="w-full lg:w-[892px] dark:border-slate-50 dark:border-1 border-0">
             <Swiper
             loop={true}
               pagination={{

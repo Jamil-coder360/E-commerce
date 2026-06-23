@@ -11,9 +11,9 @@ const Cetagories = () => {
   
   return (
     <Section className="">
-      <Container className="pt-20 pb-17.5 border-b border-border">
+      <Container className="py-5 lg:pt-20 lg:pb-17.5 border-b border-border px-5 lg:px-0">
         <div>
-          <div className="flex items-center justify-between mb-15">
+          <div className="flex flex-wrap lg:flex-nowrap items-start lg:items-center lg:justify-between mb-15">
             <SectionHeader title="Browse By Category" subtitle="Categories" />
             <Arrows swiperRef={swiperRef}/>
           </div>
