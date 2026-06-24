@@ -19,7 +19,7 @@ const ContactPage = () => {
             Contact
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-[340px_800px] gap-7.5 mb-12">
+        <div className="grid grid-cols-1 gap-7.5 mb-12 md:grid-cols-[340px_minmax(0,1fr)]">
           <div className="bg-white rounded-sm shadow-xs border border-gray-100 ">
             <div className="px-6 py-8 flex flex-col gap-20">
               <div className="relative">

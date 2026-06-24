@@ -17,7 +17,7 @@ const OurStory = () => {
             About
           </Link>
         </div>
-        <div className="pt-10.5 grid grid-cols-1 lg:grid-cols-[525px_705px] gap-8 lg:gap-18.75">
+        <div className="pt-10.5 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,525px)_minmax(0,1fr)] lg:gap-20">
           <div className="order-2 lg:order-1">
             <h1 className="text-[36px] lg:text-[54px] font-semibold text-black pb-4 lg:pb-10">
               Our Story

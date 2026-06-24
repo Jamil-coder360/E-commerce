@@ -17,17 +17,17 @@ const Account = () => {
               <span>Account</span>
             </div>
             <div className="flex items-center gap-3 pb-12.5 text-black/50">
-              <span className="text-black font-normal text-sm leading-[1.5]">
+              <span className="text-black font-normal text-sm leading-normal">
                 Welcome!
               </span>
-              <span className="text-red-500 font-normal text-sm leading-[1.5]">
+              <span className="text-red-500 font-normal text-sm leading-normal">
                 {" "}
                 Md Rimel
               </span>
             </div>
           </div>
 
-          <div className="grid grid-cols-[280px_1fr]  justify-between">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-[280px_minmax(0,1fr)] justify-between">
             <div>
           
           <AccountSidebar />

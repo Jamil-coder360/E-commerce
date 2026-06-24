@@ -61,11 +61,11 @@ const ProductCard = ({ product }) => {
             />
           </button>
 
-          <Link to={"product/:id"}>
-            <button>
-              <EyeIcon />
-            </button>
-          </Link>
+       <Link to={`/product/${product.id}`}>
+  <button>
+    <EyeIcon />
+  </button>
+</Link>
         </div>
 
         <button

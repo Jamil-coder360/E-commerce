@@ -145,13 +145,13 @@ const { activeMenu } = useSelector((state) => state.shop);
           <span>/</span>
           <span>Shop</span>
         </div>
-        <div className="grid grid-cols-[280px_1fr]">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[280px_minmax(0,1fr)]">
           <div>
-            <div className="pr-4 pt-10">
+            <div className="pr-0 pt-10 lg:pr-4">
               <p className="text-xl pb-4">Shop by Category</p>
 
               	<li
-								className={`text-black flex justify-between gap-2 items-center cursor-pointer hover:text-red-500 mb-4 ${activeMenu === "All" && "text-blue-500"}`}
+								className={`text-black flex flex-wrap lg:flex-nowrap flex-row justify-between gap-2 items-center cursor-pointer hover:text-red-500 mb-4 ${activeMenu === "All" && "text-blue-500"}`}
 								onClick={() => {
 									setUrl("https://dummyjson.com/products");
 									dispatch(activeCategory("All"));
@@ -159,13 +159,14 @@ const { activeMenu } = useSelector((state) => state.shop);
 							>
 								<span>All</span>
 							</li>
-              <ul className="space-y-4">
+              {/* <ul className="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:flex-col gap-4"></ul> */}
+            <ul className="flex flex-row flex-wrap md:flex-col gap-4">
                 {menus.map((menu) => (
                   <li
                     key={menu.id}
                     onClick={() => handleFilter(menu)}
                     // title={menu.id}
-                   className={`text-black flex justify-between gap-2 items-center cursor-pointer hover:text-red-500 ${activeMenu === menu.name && "text-blue-500"}`}
+                   className={`text-black flex flex-wrap lg:flex-nowrap flex-row  justify-between gap-2 items-center cursor-pointer hover:text-red-500 ${activeMenu === menu.name && "text-blue-500"}`}
                   >
                     {/* <Link to={menu.url}>{menu.name}</Link> */}
 
@@ -187,16 +188,16 @@ const { activeMenu } = useSelector((state) => state.shop);
               <p className="text-xl pb-4">Shop by Color</p>
               <ul className="grid grid-cols-1 gap-3">
                 <li className="flex items-center gap-3">
-                  <div className="size-3 rounded-full bg-black"></div>
-                  <p className="leading-[30px] text-[#767676]">Color 1</p>
+                  <div className="w-3 h-3 rounded-full bg-black"></div>
+                  <p className="leading-7.5 text-[#767676]">Color 1</p>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="size-3 rounded-full bg-[#FF0000]"></div>
-                  <p className="leading-[30px] text-[#767676]">Color 2</p>
+                  <div className="w-3 h-3 rounded-full bg-[#FF0000]"></div>
+                  <p className="leading-7.5 text-[#767676]">Color 2</p>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="size-3 rounded-full bg-[#00FF38]"></div>
-                  <p className="leading-[30px] text-[#767676]">Color 3</p>
+                  <div className="w-3 h-3 rounded-full bg-[#00FF38]"></div>
+                  <p className="leading-7.5 text-[#767676]">Color 3</p>
                 </li>
               </ul>
             </div>
@@ -206,30 +207,30 @@ const { activeMenu } = useSelector((state) => state.shop);
               <p>
                 <span>Show :</span>{" "}
                 <input
-                  className="w-[97px] border border-border text-center"
+                  className="w-24 border border-border text-center"
                   type="text"
                   onChange={(e) => handleShowMore(e.target.value)}
                   value={endCount}
                 />
               </p>
             </div>
-            <div className="grid grid-cols-3 gap-x-6 gap-y-10">
+            <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-3">
               {products?.slice(startCount, endCount).map((item) => (
                 <ProductCard key={item.id} product={item} />
               ))}
             </div>
             {/* Pagination */}
-            <div className="flex pt-10 gap-2">
-              <div className="w-[57px] h-[27px] bg-black text-white flex items-center justify-center cursor-pointer">
+            <div className="flex flex-wrap gap-2 pt-10">
+              <div className="w-14 h-7 bg-black text-white flex items-center justify-center cursor-pointer">
                 1
               </div>
-              <div className="w-[57px] h-[27px] bg-black text-white flex items-center justify-center cursor-pointer">
+              <div className="w-14 h-7 bg-black text-white flex items-center justify-center cursor-pointer">
                 2
               </div>
-              <div className="w-[57px] h-[27px] bg-black text-white flex items-center justify-center cursor-pointer">
+              <div className="w-14 h-7 bg-black text-white flex items-center justify-center cursor-pointer">
                 3
               </div>
-              <div className="w-[57px] h-[27px] bg-black text-white flex items-center justify-center cursor-pointer">
+              <div className="w-14 h-7 bg-black text-white flex items-center justify-center cursor-pointer">
                 4
               </div>
             </div>

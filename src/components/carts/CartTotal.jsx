@@ -17,18 +17,18 @@ const total = shipping + subtotal;
 	return (
 		<Section className="pb-35">
 			<Container>
-				<div className="flex items-start  justify-between gap-[173px]">
-					<div className="flex items-center justify-center gap-4">
+				<div className="flex flex-col gap-6 xl:flex-row xl:items-start xl:justify-between">
+					<div className="flex w-full flex-col items-stretch gap-4 sm:flex-row sm:items-center sm:justify-start">
 						<input
 							type="text"
 							placeholder="Coupon Code"
-							className="py-4 pl-6 w-[300px] border border-gray-500"
+							className="w-full max-w-xs py-4 pl-6 border border-gray-500"
 						/>
 						<Button TagName={Link} href="/checkout" className="">
 							Apply Coupon
 						</Button>
 					</div>
-					<div className="border border-gray-500 w-[470px]">
+					<div className="w-full border border-gray-500 xl:max-w-117.5">
 						<div className="px-6">
 							<h3 className="pt-8 font-medium text-[20px] space-y-4">
 								Cart Total

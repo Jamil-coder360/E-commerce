@@ -42,16 +42,16 @@ const CartTable = () => {
 				<div className="w-full space-y-10 mt-10.5">
 					<table className="w-full">
 						<tr className="text-black text-[16px] pl-10 pr-15 py-6 shadow-sm rounded-md">
-							<td className="px-5 h-[72px]">Product</td>
-							<td className="px-5 h-[72px]">Price</td>
-							<td className="px-5 h-[72px] text-center">Quantity</td>
-							<td className="px-5 h-[72px] text-right">Subtotal</td>
+						<td className="px-5 h-18">Product</td>
+						<td className="px-5 h-18">Price</td>
+						<td className="px-5 h-18 text-center">Quantity</td>
+						<td className="px-5 h-18 text-right">Subtotal</td>
 						</tr>
 						{cartList.map((item) => (
 							<tr className="text-black text-[16px] pl-10 pr-15 py-6 shadow-sm rounded-md">
-								<td className="px-5 h-[72px]">
+								<td className="px-5 h-18">
 									<div className="flex items-center gap-2">
-										<div className="size-[54px] overflow-hidden">
+										<div className="w-14 h-14 overflow-hidden">
 											<img
 												src={item.thumbnail}
 												alt="image"
@@ -61,9 +61,9 @@ const CartTable = () => {
 										<p>{item.title}</p>
 									</div>
 								</td>
-								<td className="px-5 h-[72px]">${item.price}</td>
-								<td className="px-5 h-[72px] text-center flex items-center justify-center ">
-									<div className="border p-1 w-[72px] h-12 rounded flex items-center gap-1 justify-between">
+								<td className="px-5 h-18">${item.price}</td>
+								<td className="px-5 h-18 text-center flex items-center justify-center ">
+									<div className="border p-1 w-18 h-12 rounded flex items-center gap-1 justify-between">
 									<span className="mx-2">{item.quantity || 1}</span>
 									<div className="flex flex-col">
 										<button
@@ -81,7 +81,7 @@ const CartTable = () => {
 										</div>
 									</div>
 								</td>
-								<td className="px-5 h-[72px] text-right">
+								<td className="px-5 h-18 text-right">
 									${(item.price * (item.quantity || 1)).toFixed(2)}
 								</td>
 							</tr>

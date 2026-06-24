@@ -42,11 +42,11 @@ for (let [key,value] of fromData) {
 
   return (
     <Section className="pt-15 pb-35">
-        <div className="grid grid-cols-[auto_1fr] items-center gap-[129px]">
+        <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-[auto_1fr] md:gap-32">
           <div>
-            <img src={Side} alt="" />
+            <img src={Side} alt="" className="w-full max-w-lg mx-auto md:mx-0" />
           </div>
-          <div className="max-w-[371px]">
+          <div className="w-full max-w-md mx-auto md:mx-0">
            
             <h3 className="text-black font-inter font-medium text-[36px] leading-[30px]">
               Log in to Exclusive
@@ -54,7 +54,7 @@ for (let [key,value] of fromData) {
             <p className="text-black text-base font-normal pt-6 pb-12">
               Enter your details below
             </p>
-            <form onSubmit={handleLogin} action="" className="flex flex-col gap-10 w-[370px]">
+            <form onSubmit={handleLogin} action="" className="flex w-full max-w-md flex-col gap-10">
               <input
                 className="border-b border-border focus:outline-0 placeholder:text-[#000000]/40"
                 type="text"
